@@ -133,7 +133,7 @@ header a{
 header ul {
     float: left;
     text-align: center;
-    padding-top: 10px;
+    padding-top: 20px;
     padding-bottom: 20px;
     background-color: yellow;
 
@@ -157,7 +157,7 @@ header ul li a {
 }
 
 header .nav-button {
-    padding-top: 30px;
+    padding-top: 35px;
     float: right;
 }
 
