@@ -28,6 +28,7 @@ time, mark, audio, video {
 body{
     line-height: 1;
     background-color: black;
+    color: white;
 }
 
 article, aside, details, figcaption, figure,
@@ -126,6 +127,7 @@ header a{
     padding: 20px 10px 20px 10px;
 
 
+
 }
 
 header ul {
@@ -142,6 +144,7 @@ header ul {
 header ul li {
 
     display: inline-block;
+
 }
 
 header ul li a {
@@ -150,11 +153,36 @@ header ul li a {
     font-family: Quicksand;
     font-weight: 600;
     color: black;
+
 }
 
 header .nav-button {
     padding-top: 30px;
     float: right;
+}
+
+header .company-logo {
+    border: #111 3px;
+}
+
+
+footer p {
+    color: white;
+    font-family: Quicksand;
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+
+}
+
+body h1 {
+    color: white;
+    font-family: Quicksand;
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+    line-height: 2;
+
 }
 
 

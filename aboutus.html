@@ -1,27 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-    <meta charset="utf-8">
-    <title>BEE TECHNOLOGIES</title>
-    <meta name = "viewport" content="width=device-width" inital-scale=1.0>
-    <!--ADD TITLE ICON-->
-    <!--FAVICON-->
-    <link rel="icon" href="/Users/bactran/OneDrive/HTML Learning/Test Website Making/IMG_2287.PNG" 
-    type = "image/PNG" sizes="64x64">
-    <!--FOR APPLE/SAFARI ICON-->
-    <link rel="mask-icon" href="/Users/bactran/OneDrive/HTML Learning/Test Website Making/IMG_2287.PNG">
-    <!--ADD FONTS-->
-    <link
-    href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <header>
-        <div>ABOUT US</div>
-        <div>Lam gium tao page nay nhe. haha</div>
-        </header>
-        <footer>
+        <title>
+            Bee Techonologies
+        </title>
 
+        <meta name = "viewport" content="width=device-width" inital-scale=1.0>
+        <!--ADD TITLE ICON-->
+        <!--FAVICON-->
+        <link rel="apple-touch-icon" sizes="57x57" href="COMPANY LOGO/favicon/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="COMPANY LOGO/favicon/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="COMPANY LOGO/favicon/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="COMPANY LOGO/favicon/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="COMPANY LOGO/favicon/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="COMPANY LOGO/favicon/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="COMPANY LOGO/favicon/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="COMPANY LOGO/favicon/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="COMPANY LOGO/favicon/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="COMPANY LOGO/favicon/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="COMPANY LOGO/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="COMPANY LOGO/favicon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="COMPANY LOGO/favicon/favicon-16x16.png">
+        <link rel="manifest" href="COMPANY LOGO/favicon/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="COMPANY LOGO/favicon/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+
+        <!--ADD FONTS-->
+        <link
+        href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body> 
+        <header>
+            <a href="index.html" class="company-logo"><img src="C:\Users\phong\OneDrive\THE BEEHIVE\COMPANY LOGO\bee.PNG" 
+                alt="logo" width="130" height="65" class="imgclass">BEE TECHNOLOGY</a></li>
+
+
+            <a class="nav-bar">
+                <ul class="navlist">
+                <li><a href="index.html" id="header-home">HOME</a></li>
+                <li><a href="aboutus.html" id="header-abtus">ABOUT US</a></li>
+                <li><a href="products.html" id="header-products">PRODUCTS</a></li>
+                <li><a href="demo.html" id="header-demo">DEMO</a></li>
+                <li><a href="contact.html" id="header-contact">CONTACT</a></li>
+                </ul>
+            </a>
+
+            <a href="#" onclick="openSlideMenu()" class="nav-button">
+
+                <span id="open-slide">
+                        <svg width="40" height="40">
+                            <path d="M0,5 30,5" stroke="#111" stroke-width="5"/>
+                            <path d="M0,14 30,14" stroke="#111" stroke-width="5"/>
+                            <path d="M0,23 30,23" stroke="#111" stroke-width="5"/>
+                        </svg>
+                </span>
+            </a>
+
+        </header>
+        <!------------------------------------------------------------------------->
+
+        <!--SIDE-NAV BAR------(INVISIBLE AT HOME)---------------------------------->
+        <div id="side-menu" class="side-nav">
+            <a href="#" class="btn-close" onclick=closeSlideMenu()>&times;</a>
+            <a href="index.html">Home</a>
+            <a href="aboutus.html">About Us</a>
+            <a href="products.html">Products</a>
+            <a href="demo.html">Demo</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <!------------------------------------------------------------------------->
+
+        <!--SCRIPT TO OPEN/CLOSE SIDE BAR/NVAIGATION-->
+        <script>
+            function openSlideMenu(){
+                document.getElementById('side-menu').style.width='250px';
+                document.getElementById('main').style.marginLeft='250px';
+            }
+        </script>
+    
+        <script>
+            function closeSlideMenu(){
+                document.getElementById('side-menu').style.width='0px';
+                document.getElementById('main').style.marginLeft='0px';
+            }
+        </script>
+        <!------------------------------------------------------------------------->
+
+        <!--CONTENT BELOW MAIN-NAV BAR-------------------------------------------------->
+        <h1>ABOUT US</h1>
+
+
+
+        <footer>
+            <p>footer</p>
         </footer>
+
+
+
+
     </body>
 </html>
