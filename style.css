@@ -117,7 +117,7 @@ html {
 header {
     height: fit-content;
     width: 100%;
-    background-color: yellow;
+    background-color: #F69E00;
     float: left;
 
 }
@@ -135,9 +135,6 @@ header ul {
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
-    background-color: yellow;
-
-
 
 }
 
