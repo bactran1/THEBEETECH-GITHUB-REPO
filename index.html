@@ -36,34 +36,37 @@
     </head>
 
     <body> 
-        <header>
-            <a href="index.html" class="company-logo"><img src="COMPANY LOGO/bee.png" 
-                alt="logo" width="130" height="65" class="imgclass">BEE TECHNOLOGY</a>
+        <!-- Implement dynamic background-->
+        <div id="container"></div>
+        <!--------------------------------->
+        <div class="btext">
+            <header>
+                <a href="index.html" class="company-logo"><img src="COMPANY LOGO/bee.png" alt="logo" width="130" height="65" class="imgclass">BEE TECHNOLOGY</a>
 
 
-            <a class="nav-bar">
-                <ul class="navlist">
-                <li><a href="index.html" id="header-home">HOME</a></li>
-                <li><a href="aboutus.html" id="header-abtus">ABOUT US</a></li>
-                <li><a href="products.html" id="header-products">PRODUCTS</a></li>
-                <li><a href="demo.html" id="header-demo">DEMO</a></li>
-                <li><a href="contact.html" id="header-contact">CONTACT</a></li>
-                </ul>
-            </a>
+                <a class="nav-bar">
+                    <ul class="navlist">
+                    <li><a href="index.html" id="header-home">HOME</a></li>
+                    <li><a href="aboutus.html" id="header-abtus">ABOUT US</a></li>
+                    <li><a href="products.html" id="header-products">PRODUCTS</a></li>
+                    <li><a href="demo.html" id="header-demo">DEMO</a></li>
+                    <li><a href="contact.html" id="header-contact">CONTACT</a></li>
+                    </ul>
+                </a>
 
-            <a href="#" onclick="openSlideMenu()" class="nav-button">
+                <a href="#" onclick="openSlideMenu()" class="nav-button">
 
-                <span id="open-slide">
-                        <svg width="40" height="40">
-                            <path d="M0,5 30,5" stroke="#111" stroke-width="5"/>
-                            <path d="M0,14 30,14" stroke="#111" stroke-width="5"/>
-                            <path d="M0,23 30,23" stroke="#111" stroke-width="5"/>
-                        </svg>
-                </span>
-            </a>
-
-        </header>
-
+                    <span id="open-slide">
+                            <svg width="40" height="40">
+                                <path d="M0,5 30,5" stroke="#111" stroke-width="5"/>
+                                <path d="M0,14 30,14" stroke="#111" stroke-width="5"/>
+                                <path d="M0,23 30,23" stroke="#111" stroke-width="5"/>
+                            </svg>
+                    </span>
+                </a>
+                
+            </header>
+        </div>
 
         <div id="side-menu" class="side-nav">
             <a href="#" class="btn-close" onclick=closeSlideMenu()>&times;</a>
@@ -88,18 +91,32 @@
                 document.getElementById('main').style.marginLeft='0px';
             }
         </script>
-        <video width="400" controls>
-            <source src="rtsp://10.0.0.56:554/user=admin&password=backhung&channel=1&stream=0.sdp?real_stream
-            " type="video/mp4">
-            <source src="rtsp://10.0.0.56:554/user=admin&password=backhung&channel=1&stream=0.sdp?real_stream
-            " type="video/ogg">
-            Your browser does not support HTML5 video.
-        </video>
-
-        <embed type="application/x-vlc-plugin" pluginspage="http://www.videolan.org" autoplay="yes" loop="no" width="300" height="200" target="rtsp://10.0.0.56:554/user=admin&password=backhung&channel=1&stream=0.sdp?real_stream" />
-        <object classid="clsid:9BE31822-FDAD-461B-AD51-BE1D1C159921" codebase="http://download.videolan.org/pub/videolan/vlc/last/win32/axvlc.cab" style="display:none;"></object>
-
         
+
+        <!--
+        <video id="video" src="http://10.0.0.68:8082" autoplay="autoplay" width="704" height="480"></video>
+        -->
+
+
+        <section class="test-sec1">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere repellendus autem vitae, facilis laboriosam quis placeat corrupti odit perferendis, quidem eveniet quo? Perferendis saepe sed ab aliquid, et quas nesciunt.</p>
+            
+        </section>
+        
+        <section class="test-sec2">
+            <p>2Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere repellendus autem vitae, facilis laboriosam quis placeat corrupti odit perferendis, quidem eveniet quo? Perferendis saepe sed ab aliquid, et quas nesciunt.</p>
+        </section>
+
+
+        <!----------------FOOTER--------------------------------------------->
+        <footer>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni, saepe earum iste nesciunt commodi ut corporis dicta aut deleniti. Natus ex corporis quia blanditiis optio veritatis impedit unde obcaecati nemo!</p>
+        </footer>
+
+        <!----------------FOOTER--------------------------------------------->
+  
+
+        <script src="nodegarden-master/docs/js/main.js"></script>
 
 
     </body>
