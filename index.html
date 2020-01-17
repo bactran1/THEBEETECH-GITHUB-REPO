@@ -1,123 +1,192 @@
-<!--STABLE v2_Bac
-    PLEASE DELETE/CHANGE THIS LINE AFTER A NEW BRANCH-->
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
-        <title>
-            Bee Techonologies
-        </title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <meta name = "viewport" content="width=device-width" inital-scale=1.0>
         <!--ADD TITLE ICON-->
         <!--FAVICON-->
-        <link rel="apple-touch-icon" sizes="57x57" href="COMPANY LOGO/favicon/apple-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="60x60" href="COMPANY LOGO/favicon/apple-icon-60x60.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="COMPANY LOGO/favicon/apple-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="COMPANY LOGO/favicon/apple-icon-76x76.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="COMPANY LOGO/favicon/apple-icon-114x114.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="COMPANY LOGO/favicon/apple-icon-120x120.png">
-        <link rel="apple-touch-icon" sizes="144x144" href="COMPANY LOGO/favicon/apple-icon-144x144.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="COMPANY LOGO/favicon/apple-icon-152x152.png">
-        <link rel="apple-touch-icon" sizes="180x180" href="COMPANY LOGO/favicon/apple-icon-180x180.png">
-        <link rel="icon" type="image/png" sizes="192x192"  href="COMPANY LOGO/favicon/android-icon-192x192.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="COMPANY LOGO/favicon/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="96x96" href="COMPANY LOGO/favicon/favicon-96x96.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="COMPANY LOGO/favicon/favicon-16x16.png">
-        <link rel="manifest" href="COMPANY LOGO/favicon/manifest.json">
-        <meta name="msapplication-TileColor" content="#ffffff">
-        <meta name="msapplication-TileImage" content="COMPANY LOGO/favicon/ms-icon-144x144.png">
-        <meta name="theme-color" content="#ffffff">
 
-        <!--ADD FONTS-->
-        <link
-        href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700" rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
+        <link rel="icon" type="image/png" sizes="144x144" href="COMPANY LOGO/bee-v2.png">
+        <link rel="manifest" href="COMPANY LOGO/bee-v2.png">
+        <meta name="msapplication-TileColor" content="#000000">
+        <meta name="msapplication-TileImage" content="COMPANY LOGO/bee-v2.png">
+        <meta name="theme-color" content="#111111">
+
+        <!-- ADD Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700" rel="stylesheet">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="style-bs4.css">
+        <title>Bee Technologies</title>
     </head>
 
-    <body> 
-        <!-- Implement dynamic background-->
-        <div id="container"></div>
-        <!--------------------------------->
-        <div class="btext">
-            <header>
-                <a href="index.html" class="company-logo"><img src="COMPANY LOGO/bee.png" alt="logo" width="130" height="65" class="imgclass">BEE TECHNOLOGY</a>
 
 
-                <a class="nav-bar">
-                    <ul class="navlist">
-                    <li><a href="index.html" id="header-home">HOME</a></li>
-                    <li><a href="aboutus.html" id="header-abtus">ABOUT US</a></li>
-                    <li><a href="products.html" id="header-products">PRODUCTS</a></li>
-                    <li><a href="demo.html" id="header-demo">DEMO</a></li>
-                    <li><a href="contact.html" id="header-contact">CONTACT</a></li>
+    <body>
+    <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light main-nav">
+            <a class="navbar-brand" href="#"><img src="COMPANY LOGO/bee-v2.png" alt="logo" width="55" height="55" class="imgclass">  BEE TECHNOLOGIES</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse ml-5" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">About Us</a>
+                  </li>
+                  <li class="nav-item haha">
+                    <a class="nav-link" href="#">Products</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Service</a>
+                  </li>
+                </ul>
+                <div class="mrt ml-auto">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                          </li>     
                     </ul>
+                </div>
+              </div>
+        </nav>
+
+    <!-- Dynamic Background of Particles Effect (OPTIONAL)-->
+
+    <!--- Image Slider -->
+        <section>
+            <div id="carouselId-1" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselId" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselId" data-slide-to="1"></li>
+                    <li data-target="#carouselId" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="img/carousel1.png" alt="First slide">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h3>Title</h3>
+                            <p>Description</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="img/carousel2.png" alt="Second slide">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h3>Title</h3>
+                            <p>Description</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="img/carousel3.png" alt="Third slide">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h3>Title</h3>
+                            <p>Description</p>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselId-1" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
                 </a>
-
-                <a href="#" onclick="openSlideMenu()" class="nav-button">
-
-                    <span id="open-slide">
-                            <svg width="40" height="40">
-                                <path d="M0,5 30,5" stroke="#111" stroke-width="5"/>
-                                <path d="M0,14 30,14" stroke="#111" stroke-width="5"/>
-                                <path d="M0,23 30,23" stroke="#111" stroke-width="5"/>
-                            </svg>
-                    </span>
+                <a class="carousel-control-next" href="#carouselId-1" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
                 </a>
-                
-            </header>
-        </div>
+            </div>
+        </section>
+        <section>
+            <div id="carouselId-2" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselId" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselId" data-slide-to="1"></li>
+                    <li data-target="#carouselId" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="img/carousel1.png" alt="First slide">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h3>Title</h3>
+                            <p>Description</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="img/carousel2.png" alt="Second slide">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h3>Title</h3>
+                            <p>Description</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="img/carousel3.png" alt="Third slide">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h3>Title</h3>
+                            <p>Description</p>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselId-2" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselId-2" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </section>
 
-        <div id="side-menu" class="side-nav">
-            <a href="#" class="btn-close" onclick=closeSlideMenu()>&times;</a>
-            <a href="index.html">Home</a>
-            <a href="aboutus.html">About Us</a>
-            <a href="products.html">Products</a>
-            <a href="demo.html">Demo</a>
-            <a href="contact.html">Contact</a>
-        </div>
+    <!--- Jumbotron -->
 
-        <!--SCRIPT TO OPEN/CLOSE SIDE BAR/NVAIGATION-->
-        <script>
-            function openSlideMenu(){
-                document.getElementById('side-menu').style.width='250px';
-                document.getElementById('main').style.marginLeft='250px';
-            }
-        </script>
+
+    <!--- Welcome Section -->
+
+
+    <!--- Three Column Section -->
+
+
+    <!--- Two Column Section -->
+
+
+    <!--- Fixed background -->
+
+
+    <!--- Emoji Section -->
+
     
-        <script>
-            function closeSlideMenu(){
-                document.getElementById('side-menu').style.width='0px';
-                document.getElementById('main').style.marginLeft='0px';
-            }
-        </script>
-        
-
-        <!--
-        <video id="video" src="http://10.0.0.68:8082" autoplay="autoplay" width="704" height="480"></video>
-        -->
+    <!--- Meet the team -->
 
 
-        <section class="test-sec1">
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere repellendus autem vitae, facilis laboriosam quis placeat corrupti odit perferendis, quidem eveniet quo? Perferendis saepe sed ab aliquid, et quas nesciunt.</p>
-            
-        </section>
-        
-        <section class="test-sec2">
-            <p>2Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere repellendus autem vitae, facilis laboriosam quis placeat corrupti odit perferendis, quidem eveniet quo? Perferendis saepe sed ab aliquid, et quas nesciunt.</p>
-        </section>
+    <!--- Cards -->
 
 
-        <!----------------FOOTER--------------------------------------------->
-        <footer>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni, saepe earum iste nesciunt commodi ut corporis dicta aut deleniti. Natus ex corporis quia blanditiis optio veritatis impedit unde obcaecati nemo!</p>
-        </footer>
-
-        <!----------------FOOTER--------------------------------------------->
-  
-
-        <script src="nodegarden-master/docs/js/main.js"></script>
+    <!--- Two Column Section -->
 
 
-    </body>
-</html lang="en">
+    <!--- Connect -->
+
+
+    <!--- Footer -->
+
+
+
+
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <!--For Particles Effect JS-->
+    <script src="nodegarden-master/docs/js/main.js"></script>
+    <!---------------------------------------------------------------->
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+
+</html>

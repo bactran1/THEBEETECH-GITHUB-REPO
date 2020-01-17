@@ -1,0 +1,24 @@
+{
+  "name": "nodegarden",
+  "version": "0.1.2",
+  "description": "JavaScript node garden",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "mkdir -p docs/js docs/css",
+    "dev": "node watch",
+    "build-css": "stylus -c -u nib css/index.styl -o docs/css/main.css",
+    "build-js": "rollup -c -f iife scripts/index.js -o docs/js/main-dev.js",
+    "uglify-js": "uglifyjs docs/js/main-dev.js -cmo docs/js/main.js",
+    "build-html": "pug views/index.jade -o docs/"
+  },
+  "author": "Juha Lindstedt",
+  "license": "ISC",
+  "devDependencies": {
+    "chokidar": "^3.0.2",
+    "nib": "^1.1.2",
+    "rollup": "^1.20.3",
+    "rollup-plugin-buble": "~0.19.8",
+    "stylus": "^0.54.7",
+    "uglify-js": "^3.6.0"
+  }
+}
