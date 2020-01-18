@@ -75,30 +75,48 @@ nav div ul li a {
 }
 
 .carousel-caption {
-    margin-bottom: 45vh;
+    margin-bottom: 35vh;
+    border-radius: 10px;
 }
 
 .carousel-caption h3 {
-    color: black;
+    color: #ededed;
     font-size: Quicksand;
     font-weight: 500;
     font-size: 70px;
 }
 .carousel-caption p {
-    color: black;
+    color: #ededed;
     font-size: Quicksand;
     font-size: 45px;
 }
 
+.drk:after {
+    content:"";
+    display:block;
+    position: absolute;
+    top: 0;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    background-color: black;
+    opacity: 0.6;
+
+}
+
+#particles-js{
+    width:100%;
+    height: 100vh;
+}
 
 
 
 
 
 /*---Media Queries --*/
-@media (max-width: 992px) {
+@media (max-width: 1086px) {
 
-  }
+}
 @media (max-width: 768px) {
   
 }
