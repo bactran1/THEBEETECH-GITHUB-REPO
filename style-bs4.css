@@ -30,7 +30,6 @@ body{
 
 .navbar {
     z-index: 10;
-    position: fixed;
     width: -webkit-fill-available;
 }
 .navbar-brand {
