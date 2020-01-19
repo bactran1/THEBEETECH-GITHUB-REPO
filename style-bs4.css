@@ -16,6 +16,10 @@ body{
 /*-------------------------------------------------------*/
 /*-------------------------------------------------------*/
 
+
+
+/******** NAVIGATION BAR **********************************************************/
+
 .bg-light{
     /*background-image: linear-gradient(#F69E00,#F69E00,#F69E00,#F69E00,#F69E00,#F69E00,#F69E00,#F69E00, #343434) !important; */
     /*    background-image: linear-gradient(to right,#F69E00, #343434) !important; */
@@ -24,6 +28,11 @@ body{
     border-radius: 7px;
 }
 
+.navbar {
+    z-index: 10;
+    position: fixed;
+    width: -webkit-fill-available;
+}
 .navbar-brand {
     font-family: Quicksand;
     font-weight: bold;
@@ -60,17 +69,16 @@ nav div ul li a {
 .navbar-light .navbar-nav>li>a:hover {
     color:black !important;
     transition: 0.3s;    
-    
 }
 
 .main-nav a {
     margin-right: 30px;
 }
 
-/********- Image Slider ********/
+/******** Image Slider **********************************************************/
 .carousel-inner > .carousel-item > img, .carousel-inner > .carousel-item > a > img {
     width:100%;
-    height: 90vh;
+    height: 100vh;
     border-radius: 6px;
 }
 
@@ -80,15 +88,31 @@ nav div ul li a {
 }
 
 .carousel-caption h3 {
-    color: #ededed;
-    font-size: Quicksand;
+    color: white;
+    font-family: Quicksand;
     font-weight: 500;
     font-size: 70px;
+    
 }
 .carousel-caption p {
     color: #ededed;
-    font-size: Quicksand;
+    font-family: Quicksand;
+    font-weight: 500;
     font-size: 45px;
+
+}
+
+.carousel-indicators {
+    z-index: 1;
+}
+
+.carousel-indicators li {
+    background-color: #F69E00 !important;
+}
+
+.carousel-indicators .active {
+    background-color: black!important;
+    outline: solid 2px #F69E00;
 }
 
 .drk:after {
@@ -100,13 +124,124 @@ nav div ul li a {
     left: 0;
     right: 0;
     background-color: black;
-    opacity: 0.6;
-
+    opacity: 0.8;
 }
+
+.carousel-caption a {
+    text-align: center;;
+}
+.btn-primary {
+    background-color: #F69E00;
+    color: #232323;
+    border-radius: 8px;
+    border-color: #232323;
+    width: 20%;
+    padding: 10px 0;
+    font-size: inherit;
+    font-weight: bold;
+    font-family: Quicksand;
+}
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
+    background-color:#222222 !important;
+    color: #F69E00 !important;
+    border-radius: 8px;
+    border-color: #F69E00 !important;
+    width: 20%;
+    padding: 10px 0;
+    font-size: inherit;
+    font-weight: bold;
+    font-family: Quicksand;
+    outline: inherit 1px #F69E00  !important;
+    box-shadow: 0 0 3pt 2pt #F69E00 !important;
+}
+
+/******** TOGGLER ICON ANIMATION **********************************************************/
+
+.animated-icon1{
+    width: 30px;
+    height: 20px;
+    position: relative;
+    padding: 12px !important;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+    }
+    
+    .animated-icon1 span{
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+    }
+    
+    .animated-icon1 span {
+    background: black;
+    }
+
+    
+    .animated-icon1 span:nth-child(1) {
+    top: 0px;
+    }
+    
+    .animated-icon1 span:nth-child(2) {
+    top: 10px;
+    }
+    
+    .animated-icon1 span:nth-child(3) {
+    top: 20px;
+    }
+    
+    .animated-icon1.open span:nth-child(1) {
+    top: 11px;
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg);
+    }
+    
+    .animated-icon1.open span:nth-child(2),
+    .animated-icon1.open span:nth-child(2):focus {
+    opacity: 0;
+    left: -60px;
+    outline: none;
+    box-shadow: none;
+    background-color: none !important;
+    border: none;
+    }
+    
+    .animated-icon1.open span:nth-child(3) {
+    top: 11px;
+    -webkit-transform: rotate(-135deg);
+    -moz-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+    }
+
+/******** PARTCILES JS **********************************************************/
 
 #particles-js{
     width:100%;
-    height: 100vh;
+    height: 95vh;
 }
 
 
@@ -114,11 +249,22 @@ nav div ul li a {
 
 
 /*---Media Queries --*/
-@media (max-width: 1086px) {
+@media (max-width: 1200px) {
+
+}
+@media (max-width: 992px) {
 
 }
 @media (max-width: 768px) {
-  
+    .carousel-caption h3 {
+        font-size: 30px;
+    }
+    .carousel-item a,
+    .carousel-item a:hover,
+    .carousel-item a:active,
+    .carousel-item a:focus  {
+        width: 40%;
+    }
 }
 @media (max-width: 576px) {
   
