@@ -14,6 +14,12 @@ body{
     --bee-yellow: #f69e00;
 }
 
+hr{
+    background-color: var(--bee-yellow);
+    padding: 0;
+    margin:0;
+}
+
 /*MY STYLE WILL BE CODE HERE*/
 /*-------------------------------------------------------*/
 /*-------------------------------------------------------*/
@@ -79,7 +85,6 @@ nav div ul li a {
 
 /******** Image Slider **********************************************************/
 .carousel-inner > .carousel-item > img, .carousel-inner > .carousel-item > a > img {
-    width:100%;
     height: calc(100vh - 81px);
     border-radius: 7px;
 }
@@ -240,12 +245,165 @@ nav div ul li a {
     }
 
 /******** PARTCILES JS **********************************************************/
-
 #particles-js{
     background-color: #232323;
     width:100%;
-    height: calc(100vh - 81px);
+    height: 100%;
     border-radius: 7px;
+    max-height: 140vw;
+    min-height: calc(40vw + 200px);
+}
+
+.ptcjs .carousel-caption {
+    margin-bottom: 1vw;
+    height:40vw;
+    max-height: 100vw;
+    min-height: 5vw;
+    position: absolute;
+    top: 0;
+
+}
+/******** Our Projects **********************************************************/
+.proj .projtitle {
+    color: #ededed;
+    font-size: 35px;
+    font-weight: bold;
+    font-family: Quicksand;
+    padding-left: 7%;
+    padding-right: 7%;
+    padding-top:7%;
+}
+
+.proj .projtitle div {
+    border: solid 1px var(--bee-yellow);
+    letter-spacing: 1.0vw;
+}
+
+.proj .projects p {
+    color: #ededed;
+    font-size: 0.9vw;
+    font-weight: bold;
+    font-family: monospace;
+    padding: 1% 7%;
+}
+
+/******** Our Approach **********************************************************/
+.appr .apprjtitle {
+    color: #ededed;
+    font-size: 35px;
+    font-weight: bold;
+    font-family: Quicksand;
+    padding-left: 7%;
+    padding-right: 7%;
+    padding-top:7%;
+}
+
+.appr .apprjtitle div {
+    border: solid 1px var(--bee-yellow);
+    letter-spacing: 1.0vw;
+}
+
+.appr .apprs p {
+    color: #ededed;
+    font-size: 0.9vw;
+    font-weight: bold;
+    font-family: monospace;
+    padding: 1% 7%;
+}
+
+
+/******** MEET THE TEAM **********************************************************/
+
+.meettheteam .meet {
+    color: #ededed;
+    font-size: 35px;
+    font-weight: bold;
+    font-family: Quicksand;
+    padding-left: 7%;
+    padding-right: 7%;
+    padding-bottom: 4.5%;
+    padding-top: 4.5%;
+}
+
+.meettheteam .meet div {
+    border: solid 1px var(--bee-yellow);
+    letter-spacing: 2.5vw;
+}
+
+.team .row .col-lg-6 {
+    padding-bottom: 12%;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+ 
+.team .card {
+    padding: 25px;
+    background-color: #232323;
+    border: solid #ededed;
+    border-radius: 0px;
+    
+}
+
+.team .card-title {
+    color: #ededed;
+    font-family: monospace;
+    margin: 17px;
+    font-size: 2vw;
+}
+
+.team .card-text {
+    color: #ededed;
+    font-family: monospace;
+    margin: 17px;
+    font-size: 1.0vw;
+}
+
+.team .card-body i {
+    font-size: 50px;
+    background-color: transparent;
+    color: #ededed;
+    padding: 10px;
+}
+
+.team img {
+    padding: 0px !important;
+    border-radius: 0px;
+    border: none;
+    width:170px;
+    height:170px;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+}
+
+/******** FOOTER **********************************************************/
+
+footer {
+    background-color: var(--bee-yellow);
+    border-radius: 7px;
+}
+
+.rowfooter{
+    margin: 0px 0px !important;
+}
+
+.rowfooter p {
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Quicksand;
+}
+
+
+.rowfooter a i{
+    font-size: 50px;
+    background-color: transparent;
+    color: black;
+    padding: 10px;
+}
+
+.rowfooter img {
+    width: 3vw;
+    height: 3vw;
 }
 
 
@@ -253,10 +411,71 @@ nav div ul li a {
 
 /*---Media Queries --*/
 @media (max-width: 1200px) {
+    .proj .projtitle {
+        font-size: 3vw;
+        padding-top: 3%;
+    }
+
+    .proj p{
+        font-size: 2vw;
+    }
+
+    .appr .apprjtitle {
+        font-size: 3vw;
+        padding-top:0;
+    }
+    
+    .appr .apprjtitle div {
+        border: solid 1px var(--bee-yellow);
+        letter-spacing: 2.5vw;
+    }
+    
+    .appr .apprs p {
+        font-size: 2vw;
+    }
+
+    .meettheteam .meet {
+        font-size: 3vw;
+    }
+
+    .team .card-title {
+        margin: 17px;
+        font-size: 2.5vw;
+    }
+    
+    .team .card-text {
+        margin: 17px;
+        font-size: 1.5vw;
+    }
+
+    .rowfooter img {
+        width: 6vw;
+        height: 6vw;
+    }
+
+    #particles-js{
+        max-height: 110vw;
+        min-height: calc(40vw);
+    }
+
+    .ptcjs .carousel-caption {
+        margin-bottom:2vw;
+    }
+
+
 
 }
 @media (max-width: 992px) {
-
+    .team .card-title {
+        font-size: 3.7vw;
+    }
+    .team .card-text {
+        font-size: 2.0vw;
+    }
+    #particles-js{
+        max-height: 110vw;
+        min-height: calc(40vw + 50px);
+    }
 }
 @media (max-width: 768px) {
     .carousel-caption h3 {
@@ -268,9 +487,103 @@ nav div ul li a {
     .carousel-item a:focus  {
         width: 40%;
     }
+
+    .navbar-brand {
+        font-size: 18px;
+        
+    }
+    #particles-js{
+        max-height: 110vw;
+        min-height: calc(57vw);
+    }
+
+    .particles-js-canvas-el {
+        min-height: 57vw;
+        opacity: 0.5;
+    } 
 }
 @media (max-width: 576px) {
-  
+    .team img {
+        width:120px;
+        height:120px;
+    }
+
+    #particles-js{
+        max-height: 110vw;
+        min-height: 97vw;
+    }
+    .particles-js-canvas-el {
+        min-height: 97vw;
+        opacity: 0.5;
+    } 
+    .proj .projtitle {
+        font-size: 4vw;
+        padding-top: 3%;
+    }
+    .proj p{
+        font-size: 3vw;
+    }
+
+    .appr .apprjtitle {
+        font-size: 4vw;
+        padding-top:0;
+    }
+    
+    .appr .apprs p {
+        font-size: 3vw;
+    }
+}
+@media (max-width: 414px) {
+    .proj .projects p {
+        font-size: 2.5vw;
+    }
+    .team img {
+        width:120px;
+        height:120px;
+    }
+
+    .team .row .col-lg-6 {
+        padding-right: 7%;
+        padding-left: 7%;
+    }
+
+    #particles-js{
+        max-height: 110vw;
+        min-height: 100vw;
+    }
+    .particles-js-canvas-el {
+        min-height: 110vw;
+        opacity: 0.5;
+    } 
+}
+@media (max-width: 320px) {
+    .proj .projects p {
+        font-size: 2.5vw;
+    }
+
+    .team img {
+        width:120px;
+        height:120px;
+    }
+    .team .row .col-lg-6 {
+        padding-right: 7%;
+        padding-left: 7%;
+    }
+    .team .card-title {
+        font-size: 4.7vw;
+    }
+    .team .card-text {
+        font-size: 2.5vw;
+    }
+
+    #particles-js{
+        max-height: 110vw;
+        min-height: 120vw;
+    }
+    .particles-js-canvas-el {
+        min-height: 120vw;
+        opacity: 0.5;
+    }
 }
 
 
