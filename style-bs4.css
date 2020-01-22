@@ -25,8 +25,6 @@ hr{
 /*-------------------------------------------------------*/
 /*-------------------------------------------------------*/
 
-
-
 /******** NAVIGATION BAR **********************************************************/
 
 .bg-light{
@@ -97,9 +95,11 @@ nav div ul li a {
 .carousel-caption h3 {
     color: white;
     font-family: Quicksand;
-    font-weight: 500;
-    font-size: 70px;
-    
+    font-weight: 700;
+    font-size: 60px;
+    letter-spacing: 1vw;
+    word-spacing: 1vw;
+    text-shadow: antiquewhite 1px 1px 3px;
 }
 .carousel-caption p {
     color: #ededed;
@@ -131,7 +131,7 @@ nav div ul li a {
     left: 0;
     right: 0;
     background-color: black;
-    opacity: 0.8;
+    opacity: 0.45;
 }
 
 .carousel-caption a {
@@ -250,7 +250,7 @@ nav div ul li a {
     width:100%;
     height: 100%;
     border-radius: 7px;
-    max-height: 140vw;
+    max-height: 100%;
     min-height: calc(40vw + 200px);
 }
 
@@ -261,7 +261,11 @@ nav div ul li a {
     min-height: 5vw;
     position: absolute;
     top: 0;
-
+}
+.particles-js-canvas-el {
+    height: 100%;
+    position: absolute;
+    top: 0;
 }
 /******** Our Projects **********************************************************/
 .proj .projtitle {
@@ -269,22 +273,22 @@ nav div ul li a {
     font-size: 35px;
     font-weight: bold;
     font-family: Quicksand;
-    padding-left: 7%;
-    padding-right: 7%;
-    padding-top:7%;
+    padding: 5%;
 }
 
 .proj .projtitle div {
     border: solid 1px var(--bee-yellow);
     letter-spacing: 1.0vw;
+    word-spacing: 2.0vw;
 }
 
 .proj .projects p {
     color: #ededed;
-    font-size: 0.9vw;
+    font-size: 2.0vw;
     font-weight: bold;
     font-family: monospace;
     padding: 1% 7%;
+    line-height: 4.1vw;
 }
 
 /******** Our Approach **********************************************************/
@@ -293,22 +297,23 @@ nav div ul li a {
     font-size: 35px;
     font-weight: bold;
     font-family: Quicksand;
-    padding-left: 7%;
-    padding-right: 7%;
-    padding-top:7%;
+    padding: 5%;
 }
 
 .appr .apprjtitle div {
     border: solid 1px var(--bee-yellow);
     letter-spacing: 1.0vw;
+    word-spacing: 2.0vw;
 }
 
 .appr .apprs p {
     color: #ededed;
-    font-size: 0.9vw;
+    font-size: 2.0vw;
     font-weight: bold;
     font-family: monospace;
     padding: 1% 7%;
+    line-height: 4.1vw;
+
 }
 
 
@@ -319,15 +324,13 @@ nav div ul li a {
     font-size: 35px;
     font-weight: bold;
     font-family: Quicksand;
-    padding-left: 7%;
-    padding-right: 7%;
-    padding-bottom: 4.5%;
-    padding-top: 4.5%;
+    padding: 5%;
 }
 
 .meettheteam .meet div {
     border: solid 1px var(--bee-yellow);
-    letter-spacing: 2.5vw;
+    letter-spacing: 1.0vw;
+    word-spacing: 2.0vw;
 }
 
 .team .row .col-lg-6 {
@@ -346,21 +349,21 @@ nav div ul li a {
 
 .team .card-title {
     color: #ededed;
-    font-family: monospace;
+    font-family: Dancing Script;
     margin: 17px;
     font-size: 2vw;
+    font-weight: 700;
 }
 
 .team .card-text {
     color: #ededed;
     font-family: monospace;
     margin: 17px;
-    font-size: 1.0vw;
+    font-size: 1.2vw;
 }
 
 .team .card-body i {
     font-size: 50px;
-    background-color: transparent;
     color: #ededed;
     padding: 10px;
 }
@@ -374,6 +377,13 @@ nav div ul li a {
     -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
     filter: grayscale(100%);
 }
+
+.team .card-body i:hover {
+    background-color: transparent;
+    color: #f69e00;
+    transition: 0.5s;
+}
+
 
 /******** FOOTER **********************************************************/
 
@@ -405,29 +415,30 @@ footer {
     width: 3vw;
     height: 3vw;
 }
-
+.rowfooter .fab:hover {
+    color: #ededed;
+    transition: 0.5s;
+}
 
 
 
 /*---Media Queries --*/
 @media (max-width: 1200px) {
-    .proj .projtitle {
+    .proj .projtitle div {
         font-size: 3vw;
-        padding-top: 3%;
+        border: solid 1px var(--bee-yellow);
     }
 
-    .proj p{
+    .proj .projects p{
         font-size: 2vw;
     }
 
     .appr .apprjtitle {
         font-size: 3vw;
-        padding-top:0;
     }
     
     .appr .apprjtitle div {
         border: solid 1px var(--bee-yellow);
-        letter-spacing: 2.5vw;
     }
     
     .appr .apprs p {
@@ -516,27 +527,43 @@ footer {
         min-height: 97vw;
         opacity: 0.5;
     } 
-    .proj .projtitle {
-        font-size: 4vw;
-        padding-top: 3%;
+}
+@media (max-width: 414px) {
+    .proj .projtitle div {
+        font-size: 3.4vw;
+        border: solid 1px var(--bee-yellow);
     }
-    .proj p{
-        font-size: 3vw;
+
+    .proj .projects p{
+        font-size: 2.5vw;
     }
 
     .appr .apprjtitle {
-        font-size: 4vw;
-        padding-top:0;
+        font-size: 3.4vw;
+    }
+    
+    .appr .apprjtitle div {
+        border: solid 1px var(--bee-yellow);
     }
     
     .appr .apprs p {
-        font-size: 3vw;
-    }
-}
-@media (max-width: 414px) {
-    .proj .projects p {
         font-size: 2.5vw;
     }
+
+    .meettheteam .meet {
+        font-size: 3.4vw;
+    }
+
+    .team .card-title {
+        margin: 17px;
+        font-size: 5vw;
+    }
+    
+    .team .card-text {
+        margin: 17px;
+        font-size: 2.5vw;
+    }
+
     .team img {
         width:120px;
         height:120px;
@@ -556,14 +583,14 @@ footer {
         opacity: 0.5;
     } 
 }
-@media (max-width: 320px) {
+@media (max-width: 322px) {
     .proj .projects p {
-        font-size: 2.5vw;
+        font-size: 3.5vw;
+        line-height: 20px;
     }
-
-    .team img {
-        width:120px;
-        height:120px;
+    .appr .apprs p {
+        font-size: 3.5vw;
+        line-height: 20px;
     }
     .team .row .col-lg-6 {
         padding-right: 7%;
@@ -573,16 +600,12 @@ footer {
         font-size: 4.7vw;
     }
     .team .card-text {
-        font-size: 2.5vw;
+        font-size: 3vw;
     }
 
     #particles-js{
         max-height: 110vw;
         min-height: 120vw;
-    }
-    .particles-js-canvas-el {
-        min-height: 120vw;
-        opacity: 0.5;
     }
 }
 
