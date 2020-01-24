@@ -37,6 +37,8 @@
 
 
     <body>
+    <!--Scroll to Top Button-->
+    <button onclick="topFunction()" class="btn btn-light" id="myBtn" title="Go to top"><i class="fas fa-chevron-up rounded-circle" style="font-size: large;"></i></button>
     <!-- Navigation -->
         <nav class="navbar navbar-expand-xl navbar-light bg-light main-nav">
             <a class="navbar-brand" href="index.html"><img src="COMPANY LOGO/safari-pinned-tab.svg" alt="logo" width="55" height="55" class="imgclass" style="margin-right: 5%;">
@@ -138,38 +140,41 @@
     <!--- Jumbotron -->
 
     <!--- Our Projects -->
-    <section class="proj align-self-center">
-        <div class="container-fluid">
-            <div class="row text-center projtitle" id="ourproj">
-                <div class="col-12 align-self-center">OUR PROJECTS</div>
-            </div>
-        </div>
-        <div class="container-fluid">
-            <div class="row text-center">
-                <div class="col-12 align-self center projects">
-                    <p class="text-justify">Bee Technologies is a tech start-up that focuses on developing modern, technologically advanced and affordable for Vietnamese market.</p>
-                    <p class="text-justify">With the increment in crime rate in urban areas, a much needed affordable solution is key.</p>
+    <div class="projappr">
+            <section class="proj align-self-center">
+                <div class="container-fluid">
+                    <div class="row text-center projtitle" id="ourproj">
+                        <div class="col-12 align-self-center"><i class="fas fa-project-diagram" style="font-size: 3.3vw; padding-right:20px"></i>OUR PROJECTS</div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!--- Approach -->
-    <section class="appr" id="ourappr">
-        <div class="container-fluid">
-            <div class="row text-center apprjtitle">
-                <div class="col-12 align-self-center">OUR APPROACH</div>
-            </div>
-        </div>
-        <div class="container-fluid">
-            <div class="row text-center">
-                <div class="col-12 apprs">
-                    <p class="text-justify">The Beehive focuses on various security measures such as Cameras, Switches, Deadlock, Lightbulbs and others automation devices. With the implementation of advanced A.I. technology in detecting potential threats, our smart home devices can bring comfort and security to your household.</p>
+                <div class="container-fluid">
+                    <div class="row text-center">
+                        <div class="col-12 align-self center projects">
+                            <p class="text-justify">
+                                <img src="COMPANY LOGO/favicon.ico" class="img-responsive" style="width:2.7vw;height: 2.7vw;margin-right:10px;color:var(--bee-yellow);">Bee Technologies is a tech start-up that focuses on developing modern, technologically advanced and affordable for Vietnamese market.</p>
+                            <p class="text-justify">With the increment in crime rate in urban areas, a much needed affordable solution is key.</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
+            </section>
 
+            <!--- Approach -->
+            <section class="appr align-self-center">
+                <div class="container-fluid">
+                    <div class="row text-center apprjtitle" id="ourappr">
+                        <div class="col-12 align-self-center"><i class="fas fa-map-signs" style="font-size: 3.3vw; padding-right:20px"></i>OUR APPROACH</div>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <div class="row text-center">
+                        <div class="col-12 apprs">
+                            <p class="text-justify">Our compnay focuses on various security measures such as Cameras, Switches, Deadlock, Lightbulbs and others automation devices.</p>
+                            <p class="text-justify"><i class="fas fa-robot" style="font-size:2vw;color:var(--bee-yellow)" title="A.I> is awesome!"></i> With the implementation of advanced A.I. technology in detecting potential threats, our smart home devices can bring comfort and security to your household.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    </div>
     <!--- Three Column Section -->
 
 
@@ -186,7 +191,7 @@
         <section class="meettheteam" id="meetteam">
             <div class="container-fluid">
                 <div class="row text-center meet">
-                    <div class="col-12 align-self-center">MEET THE TEAM</div>
+                    <div class="col-12 align-self-center"><i class="fas fa-users" style="font-size: 3.3vw; padding-right:20px"></i>MEET THE TEAM</div>
                 </div>
             </div>
         </section>
@@ -201,10 +206,10 @@
                             <h5 class="card-title">BAC TRAN</h5>
                             <p class="card-text"> Mechanical Engineer / Founder</p>
                             <p class="card-text"> University of Washington Seattle</p>
-                            <a class="col-md-3 justify-content-center" href="#">
+                            <a class="col-md-3 justify-content-center" href="https://www.linkedin.com/in/btran0222" target="blank">
                                 <i class="fab fa-linkedin align-self-center"></i>
                             </a>
-                            <a class="col-md-3" href="#">
+                            <a class="col-md-3" href="#" title="Coming Soon!">
                                 <i class="fab fa-instagram"></i>
                             </a>
                         </div>
@@ -213,14 +218,14 @@
                 <div class="col-lg-6">
                     <div class="card">
                         <div class="card-body">
-                            <img class="card-img-top mb-3 rounded-circle" src="COMPANY LOGO/safari-pinned-tab.svg" alt="">
+                            <img class="card-img-top mb-3 rounded-circle" src="COMPANY LOGO/safari-pinned-tab.svg" alt="Cho Hau" title="Chó Hậu!!">
                             <h5 class="card-title">HAU TRAN</h5>
                             <p class="card-text"> Software / Electrical Engineer</p>
                             <p class="card-text"> Microsoft inc. Redmond Washington</p>
                             <a class="col-md-3" href="#">
                                 <i class="fab fa-linkedin"></i>
                             </a>
-                            <a class="col-md-3" href="#">
+                            <a class="col-md-3" href="#" title="Coming Soon!">
                                 <i class="fab fa-instagram"></i>
                             </a>
                         </div>
@@ -247,12 +252,9 @@
                     <a class="col-md-3" href="#">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a class="col-md-3" href="#">
-                        <i class="fab fa-twitter-square"></i>
-                    </a>
                 </div>
                 <div class="col-md-4 justify-content-center align-self-center">
-                    <p class="col-md copy">Bee Technologies&#169 2020</p>
+                    <p class="col-md copy">Bee Technologies &#169 2020 All Rights Reserved.</p>
                 </div>
                 <div class="col-md-4 justify-content-center align-self-center ftlogo">
                     <a class="" href="#">
@@ -278,7 +280,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="js/bootstrap-swipe-carousel.min.js"></script>
-
+    <script src="js/scrolltop.js"></script>
   </body>
 
 </html>

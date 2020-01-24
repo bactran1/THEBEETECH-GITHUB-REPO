@@ -5,9 +5,9 @@ RESET STYLE CSS
 */
 
 /*RESET HTML*/
-
 body{
     background-color: #232323;
+    height: 100%;
 }
 
 :root {
@@ -23,8 +23,29 @@ hr{
 /*MY STYLE WILL BE CODE HERE*/
 /*-------------------------------------------------------*/
 /*-------------------------------------------------------*/
-/*-------------------------------------------------------*/
 
+
+
+
+/*---Scroll to Top Button----------------------------------------------*/
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 150px;
+    right: 2.7vw;
+    z-index: 990;
+    font-size: 22px;
+    border: none;
+    outline: none;
+    background-color: #343434;
+    color: white;
+    cursor: pointer;
+    padding: 10px 7px;
+    border-radius: 200px;
+  }
+  #myBtn:hover {
+    background-color: #555;
+  }
 /******** NAVIGATION BAR **********************************************************/
 
 .bg-light{
@@ -278,6 +299,7 @@ nav div ul li a {
 
 .proj .projtitle div {
     border: solid 1px var(--bee-yellow);
+    border-radius: 7px;
     letter-spacing: 1.0vw;
     word-spacing: 2.0vw;
 }
@@ -302,6 +324,7 @@ nav div ul li a {
 
 .appr .apprjtitle div {
     border: solid 1px var(--bee-yellow);
+    border-radius: 7px;
     letter-spacing: 1.0vw;
     word-spacing: 2.0vw;
 }
@@ -329,6 +352,7 @@ nav div ul li a {
 
 .meettheteam .meet div {
     border: solid 1px var(--bee-yellow);
+    border-radius: 7px;
     letter-spacing: 1.0vw;
     word-spacing: 2.0vw;
 }
@@ -343,7 +367,7 @@ nav div ul li a {
     padding: 25px;
     background-color: #232323;
     border: solid #ededed;
-    border-radius: 0px;
+    border-radius: 7px;
     
 }
 
@@ -353,6 +377,7 @@ nav div ul li a {
     margin: 17px;
     font-size: 2vw;
     font-weight: 700;
+    text-shadow: 2px 2px 5px white;
 }
 
 .team .card-text {
@@ -366,6 +391,8 @@ nav div ul li a {
     font-size: 50px;
     color: #ededed;
     padding: 10px;
+    -webkit-transition: color, padding 0.3s;
+    transition: color, padding 0.3s;
 }
 
 .team img {
@@ -378,10 +405,17 @@ nav div ul li a {
     filter: grayscale(100%);
 }
 
+.team .card-body a:hover {
+    color: transparent;
+}
+
 .team .card-body i:hover {
     background-color: transparent;
     color: #f69e00;
     transition: 0.5s;
+    box-shadow: 0 0 var(--bee-yellow) !important;
+    padding:0;
+    margin:0;
 }
 
 
@@ -403,12 +437,15 @@ footer {
     font-family: Quicksand;
 }
 
-
+.rowfooter .smed a {
+    color:transparent;
+}
 .rowfooter a i{
     font-size: 50px;
-    background-color: transparent;
     color: black;
     padding: 10px;
+    -webkit-transition: font-size 0.3s;
+    transition: font-size 0.3s;
 }
 
 .rowfooter img {
@@ -417,10 +454,40 @@ footer {
 }
 .rowfooter .fab:hover {
     color: #ededed;
-    transition: 0.5s;
+
+    font-size: 47px;
+    align-items: center;
 }
 
-
+/******** FOOTER **********************************************************/
+/******** Contact Us Page *************************************************/
+form label,textarea,input {
+    color: #ededed;
+    font-family: Quicksand;
+    font-weight: 500;
+}
+form .subbtn .btn-light{
+    background-color: #f69e00;
+    color: #232323;
+    font-family: Quicksand;
+    font-weight: 500;
+    border:none;
+    outline:none;
+}
+form .subbtn .btn-light:hover > i {
+    animation: rotation 1s infinite linear;
+}
+@keyframes rotation {
+    from {
+      transform:translate(-30px);
+    }
+    to {
+      transform:translate(0);
+    }
+}
+iframe {
+    border-radius: 7px;
+}
 
 /*---Media Queries --*/
 @media (max-width: 1200px) {
@@ -535,7 +602,8 @@ footer {
     }
 
     .proj .projects p{
-        font-size: 2.5vw;
+        font-size: 3vw;
+        line-height: 7vw;
     }
 
     .appr .apprjtitle {
@@ -547,7 +615,8 @@ footer {
     }
     
     .appr .apprs p {
-        font-size: 2.5vw;
+        font-size: 3vw;
+        line-height: 7vw;
     }
 
     .meettheteam .meet {
@@ -585,11 +654,11 @@ footer {
 }
 @media (max-width: 322px) {
     .proj .projects p {
-        font-size: 3.5vw;
+        font-size: 4vw;
         line-height: 20px;
     }
     .appr .apprs p {
-        font-size: 3.5vw;
+        font-size: 4vw;
         line-height: 20px;
     }
     .team .row .col-lg-6 {
