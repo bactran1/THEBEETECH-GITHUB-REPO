@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!--REFRESH PAGE and REDIRECT TO ROOT-->
+        <!--<meta http-equiv="refresh" content="3;url=index.html" /> -->
+
+        <!--ADD TITLE ICON-->
+        <!--FAVICON-->
+        <link rel="apple-touch-icon" sizes="180x180" href="COMPANY LOGO/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="COMPANY LOGO/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="COMPANY LOGO/favicon-16x16.png">
+        <link rel="manifest" href="COMPANY LOGO/site.webmanifest">
+        <link rel="mask-icon" href="COMPANY LOGO/safari-pinned-tab.svg" color="#f69e00">
+        <link rel="shortcut icon" href="COMPANY LOGO/favicon.ico">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="msapplication-config" content="COMPANY LOGO/browserconfig.xml">
+        <meta name="theme-color" content="#ffffff">
+
+        <!-- ADD Fonts -->
+            <!-- ADD Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,500,600,700&display=swap" rel="stylesheet">
+        <!-- ADD FontAWESOME -->
+        <script src="https://kit.fontawesome.com/32904476b7.js" crossorigin="anonymous"></script>
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="js/toggler.js"></script>
+        <script src="js/carousel.js"></script>
+        <link rel="stylesheet" href="style-bs4.css">
+        <title> Bee Technologies - Home </title>
+    </head>
+
+    <body>
+    <!--Scroll to Top Button-->
+    <button onclick="topFunction()" class="btn btn-light" id="myBtn" title="Go to top"><i class="fas fa-chevron-up rounded-circle" style="font-size: large;"></i>
+    </button>
+    <!-- Navigation -->
+        <nav class="navbar navbar-expand-xl navbar-light bg-light main-nav">
+            <a class="navbar-brand" href="index.html"><img src="COMPANY LOGO/safari-pinned-tab.svg" alt="logo" width="55" height="55" class="imgclass" style="margin-right: 5%;">
+                BEE TECHNOLOGIES &#169
+            </a>
+
+            <button class="navbar-toggler first-button" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="animated-icon1"><span></span><span></span><span></span></div>
+            </button>
+            
+            <div class="collapse navbar-collapse ml-5" id="navbarNav">
+                <ul class="navbar-nav nav-left">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="index.html">HOME <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#ourproj">PROJECTS</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#ourappr">APPROACH</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#meetteam">ABOUT US</a>
+                  </li>
+                </ul>
+                <div class="mrt ml-auto">
+                    <ul class="navbar-nav nav-right">
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">CONTACT</a>
+                          </li>     
+                    </ul>
+                </div>
+              </div>
+        </nav>
+
+    <!--- Our Projects -->
+    <div class="projappr">
+            <section class="proj align-self-center">
+                <div class="container-fluid">
+                    <div class="row text-center projtitle" id="ourproj">
+                        <div class="col-12 align-self-center"><i class="fas fa-project-diagram" style="font-size: 3.3vw; padding-right:20px"></i>MESSAGE SENT SUCCESSFULLY!</div>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <div class="row text-center">
+                        <div class="col-12 align-self center projects">
+                            <div class="redirect">
+                                <p class="text-jutify">You will be redirect in</p>
+                                <p class="text-jutify" id="countdown">5</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    </div>
+
+    <!-- JavaScript part -->
+    <script type="text/javascript">
+        
+        // Total seconds to wait
+        var seconds = 5;
+        
+        function countdown() {
+            seconds = seconds - 1;
+            if (seconds < 0) {
+                // Chnage your redirection link here
+                window.location = "index.html";
+            } else {
+                // Update remaining seconds
+                document.getElementById("countdown").innerHTML = seconds;
+                // Count down using javascript
+                window.setTimeout("countdown()", 1000);
+            }
+        }
+        
+        // Run countdown function
+        countdown();
+        
+    </script>
+
+    <!--- Footer -->
+        <footer>
+            <div class="row container-fluid text-center rowfooter">
+                <div class="col-md-4 smed">
+                    <a class="col-md-3" href="#">
+                        <i class="fab fa-facebook-square"></i>
+                    </a>
+                    <a class="col-md-3" href="#">
+                        <i class="fab fa-youtube-square"></i>
+                    </a>
+                    <a class="col-md-3" href="#">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+                <div class="col-md-4 justify-content-center align-self-center">
+                    <p class="col-md copy">Bee Technologies &#169 2020 All Rights Reserved.</p>
+                </div>
+                <div class="col-md-4 justify-content-center align-self-center ftlogo">
+                    <a class="" href="#">
+                        <img src="COMPANY LOGO/safari-pinned-tab.svg" width="30" height="30" class="imgclassfooter  rounded-circle">
+                    </a>
+                </div>
+
+            </div>
+        </footer>
+
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="js/bootstrap-swipe-carousel.min.js"></script>
+    <script src="js/scrolltop.js"></script>
+  </body>
+</html>
+
