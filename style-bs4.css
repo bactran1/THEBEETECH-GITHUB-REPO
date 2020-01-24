@@ -34,13 +34,13 @@ hr{
     bottom: 150px;
     right: 2.7vw;
     z-index: 990;
-    font-size: 22px;
+    font-size: 30px;
     border: none;
     outline: none;
     background-color: #343434;
     color: white;
     cursor: pointer;
-    padding: 10px 7px;
+    padding: 5px 7px 12px 7px;
     border-radius: 200px;
   }
   #myBtn:hover {
