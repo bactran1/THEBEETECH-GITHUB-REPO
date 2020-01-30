@@ -5,6 +5,10 @@ RESET STYLE CSS
 */
 
 /*RESET HTML*/
+html {
+    scroll-behavior: smooth;
+}
+
 body{
     background-color: #232323;
     height: 100%;
@@ -31,7 +35,7 @@ hr{
 #myBtn {
     display: none;
     position: fixed;
-    bottom: 150px;
+    bottom: 50px;
     right: 2.7vw;
     z-index: 990;
     font-size: 30px;
@@ -106,6 +110,7 @@ nav div ul li a {
 .carousel-inner > .carousel-item > img, .carousel-inner > .carousel-item > a > img {
     height: calc(100vh - 81px);
     border-radius: 7px;
+    background-color: #ededed;
 }
 
 .carousel-caption {
@@ -185,6 +190,22 @@ nav div ul li a {
     outline: inherit 1px var(--bee-yellow)  !important;
     box-shadow: 0 0 3pt 2pt var(--bee-yellow) !important;
 }
+
+/******** Testing **********************************************************/
+
+.test .testimg img {
+    width: 100%;
+}
+
+.test .testtxt p {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 20px;
+}
+
 
 /******** TOGGLER ICON ANIMATION **********************************************************/
 
@@ -366,9 +387,7 @@ nav div ul li a {
 .team .card {
     padding: 25px;
     background-color: #232323;
-    border: solid #ededed;
-    border-radius: 7px;
-    
+    box-shadow: 0px 0px 20px #ededed;    
 }
 
 .team .card-title {
