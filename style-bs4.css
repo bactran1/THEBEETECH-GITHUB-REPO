@@ -168,8 +168,8 @@ nav div ul li a {
     color: #232323;
     border-radius: 8px;
     border-color: #232323;
-    width: 20%;
-    padding: 10px 0;
+    width: fit-content;
+    padding: 10px 20px;
     font-size: inherit;
     font-weight: bold;
     font-family: Quicksand;
@@ -182,8 +182,6 @@ nav div ul li a {
     color: var(--bee-yellow) !important;
     border-radius: 8px;
     border-color: var(--bee-yellow) !important;
-    width: 20%;
-    padding: 10px 0;
     font-size: inherit;
     font-weight: bold;
     font-family: Quicksand;
@@ -193,17 +191,37 @@ nav div ul li a {
 
 /******** Testing **********************************************************/
 
-.test .testimg img {
-    width: 100%;
-}
-
-.test .testtxt p {
-    height: 100%;
-    width: 100%;
+#intro {
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)) ,url(img/83735702-E505-40FF-92A0-B7F184203C22.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+    height: calc(100vh - 81px);
+    width: 100vw;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding: 0 20px;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 0px 20px;
+    background-blend-mode: darken;
+    background-repeat: no-repeat;
+}
+
+.landing h1,h3{
+    color:white;
+    font-size: 4.5vw;
+    font-family: Quicksand;
+    font-weight: bold;
+}
+.landing h3{
+    font-size: 2.0vw;
+    font-family: monospace;
+}
+
+.landing .col-6 {
+    flex: none;    
 }
 
 
@@ -309,6 +327,25 @@ nav div ul li a {
     position: absolute;
     top: 0;
 }
+/******** Sign up newsletter **********************************************************/
+.nwsltr {background-color: #E5E7E9;}
+.nwsltr .nwstitle{
+    font-weight: bold;
+    font-family: Quicksand;
+}
+.nwsltr .btn {
+    font-style: italic;
+    font-size: 0.9vw;
+}
+
+.nwsltr h1 {
+    color:#273746;
+    font-size: 35px;
+    font-weight: bold;
+    letter-spacing: 1.0vw;
+    word-spacing: 2.0vw;
+}
+
 /******** Our Projects **********************************************************/
 .proj .projtitle {
     color: #ededed;
@@ -510,6 +547,12 @@ iframe {
 
 /*---Media Queries --*/
 @media (max-width: 1200px) {
+    .nwsltr h1 {
+        font-size: 3vw;
+    }
+    .nwsltr .btn {
+        font-size: 1.5vw;
+    }
     .proj .projtitle div {
         font-size: 3vw;
         border: solid 1px var(--bee-yellow);
@@ -600,6 +643,9 @@ iframe {
     } 
 }
 @media (max-width: 576px) {
+    .nwsltr .btn {
+        font-size: 2vw;
+    }
     .team img {
         width:120px;
         height:120px;
@@ -615,6 +661,9 @@ iframe {
     } 
 }
 @media (max-width: 414px) {
+    .nwsltr h1 {
+        font-size: 3.4vw;
+    }
     .proj .projtitle div {
         font-size: 3.4vw;
         border: solid 1px var(--bee-yellow);
@@ -672,6 +721,9 @@ iframe {
     } 
 }
 @media (max-width: 322px) {
+    .nwsltr h1 {
+        font-size: 4vw;
+    }
     .proj .projects p {
         font-size: 4vw;
         line-height: 20px;
