@@ -224,6 +224,11 @@ nav div ul li a {
     flex: none;    
 }
 
+#PopupSignupForm_0 {
+    z-index: 99999;
+    position: relative;
+}
+
 
 /******** TOGGLER ICON ANIMATION **********************************************************/
 
