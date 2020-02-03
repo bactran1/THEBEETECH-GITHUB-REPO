@@ -481,18 +481,14 @@ iframe {
 	}
 	.proj .projtitle div {
 		font-size: 3vw;
-		border: solid 1px var(--bee-yellow);
 	}
 	.proj .projects p{
 		font-size: 2vw;
 	}
-	.appr .apprjtitle {
+	.appr2 .apprtitle {
 		font-size: 3vw;
 	}
-	.appr .apprjtitle div {
-		border: solid 1px var(--bee-yellow);
-	}
-	.appr .apprs p {
+	.appr2 .apprs p {
 		font-size: 2vw;
 	}
 	.meettheteam .meet {
@@ -581,21 +577,14 @@ iframe {
 	.nwsltr h1 {
 		font-size: 3.4vw;
 	}
-	.proj .projtitle div {
-		font-size: 3.4vw;
-		border: solid 1px var(--bee-yellow);
-	}
 	.proj .projects p{
 		font-size: 3vw;
 		line-height: 7vw;
 	}
-	.appr .apprjtitle {
+	.appr2 .apprtitle {
 		font-size: 3.4vw;
 	}
-	.appr .apprjtitle div {
-		border: solid 1px var(--bee-yellow);
-	}
-	.appr .apprs p {
+	.appr2 .apprs p {
 		font-size: 3vw;
 		line-height: 7vw;
 	}
@@ -645,7 +634,7 @@ iframe {
 		font-size: 4vw;
 		line-height: 20px;
 	}
-	.appr .apprs p {
+	.appr2 .apprs p {
 		font-size: 4vw;
 		line-height: 20px;
 	}
