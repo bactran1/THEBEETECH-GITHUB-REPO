@@ -367,15 +367,14 @@ nav div ul li a {
 .team .card {
 	padding: 25px;
 	background-color: #232323;
-	box-shadow: 0px 0px 20px #ededed;
+	border: none;
 }
 .team .card-title {
 	color: #ededed;
-	font-family: Dancing Script;
+	font-family: 'Bebas Neue', cursive;
 	margin: 17px;
 	font-size: 2vw;
-	font-weight: 700;
-	text-shadow: 2px 2px 5px white;
+	letter-spacing: 5px;
 }
 .team .card-text {
 	color: #ededed;
