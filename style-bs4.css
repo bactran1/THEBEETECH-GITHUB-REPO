@@ -2,10 +2,13 @@
 /*RESET HTML*/
 html {
 	scroll-behavior: smooth;
+	width:100vw;
 }
 body{
 	background-color: #232323;
 	height: 100%;
+	width:100%;
+	overflow-x: hidden;
 }
 :root {
 	--bee-yellow: #f69e00;
