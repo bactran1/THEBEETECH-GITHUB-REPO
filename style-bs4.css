@@ -164,7 +164,7 @@ nav div ul li a {
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
-	background-size: 100%;
+	background-size: 90% 80%;
 	background-position: center;
 	height: calc(75vh - 81px);
 	width: 100%;
@@ -308,7 +308,7 @@ nav div ul li a {
 }
 /******** Our Projects **********************************************************/
 .proj .projtitle {
-	color: #ededed;
+	color: #232323;
 	font-size: 30px;
 	font-weight: bold;
 	font-family: Quicksand;
@@ -320,16 +320,19 @@ nav div ul li a {
 	word-spacing: 2.0vw;
 }
 .projects p {
-	color: #ededed;
+	color: #232323;
 	font-size: 1.5vw;
 	font-weight: bold;
 	font-family: monospace;
 	padding: 1% 7%;
 	line-height: 4.1vw;
 }
+#ourproj {
+	background-color: blanchedalmond;
+}
 /******** Our Approach **********************************************************/
 .appr2 .apprtitle {
-	color: #232323;
+	color: #ededed;
 	font-size: 30px;
 	font-weight: bold;
 	font-family: Quicksand;
@@ -342,15 +345,12 @@ nav div ul li a {
 	word-spacing: 2.0vw;
 }
 .appr2 p {
-	color: #232323;
+	color: #ededed;
 	font-size: 1.5vw;
 	font-weight: bold;
 	font-family: monospace;
 	padding: 1% 7%;
 	line-height: 4.1vw;
-}
-#ourappr {
-	background-color: blanchedalmond;
 }
 /******** MEET THE TEAM **********************************************************/
 .meettheteam .meet {
@@ -694,7 +694,7 @@ figure {
 }
 /*--- Bootstrap Padding Fix --*/
 [class*="col-"] {
-	padding: 1rem;
+	
 }
 /*Extra small (xs) devices (portrait phones, less than 576px)No media query since this is the default in BootstrapSmall (sm) devices (landscape phones, 576px and up)@media (min-width: 576px) {
 	...
