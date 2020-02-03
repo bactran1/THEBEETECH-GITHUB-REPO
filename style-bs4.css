@@ -352,6 +352,10 @@ nav div ul li a {
 	padding: 1% 7%;
 	line-height: 4.1vw;
 }
+.appr2 img {
+	background-color: whitesmoke;
+	border-radius: 1rem;
+}
 /******** MEET THE TEAM **********************************************************/
 .meettheteam .meet {
 	color: #ededed;
