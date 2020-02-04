@@ -1,5 +1,11 @@
 /*THIS FILE IS USED TO RESET THE STYLE EVERY TIME THE INDEX.HTML FILE IS LOADED FROM THE BROWSER.THIS STYLE IS A TRADEMARK FOR THE BEE TECHNOLOGIES COMPANY LTD. WEBSITERESET STYLE CSS*/
 /*RESET HTML*/
+* {
+	-webkit-overflow-scrolling: touch;
+}
+p::selection{
+	background-color: #f69e00;
+}
 html {
 	scroll-behavior: smooth;
 	margin: 0;
@@ -179,7 +185,6 @@ nav div ul li a {
 	color:white;
 	font-size: 3.0vw;
 	font-family: Quicksand;
-	font-weight: bold;
 }
 .landing h3{
 	font-size: 1.2vw;
@@ -359,7 +364,7 @@ nav div ul li a {
 /******** MEET THE TEAM **********************************************************/
 .meettheteam .meet {
 	color: #ededed;
-	font-size: 35px;
+	font-size: 30px;
 	font-weight: bold;
 	font-family: Quicksand;
 	padding: 5%;
@@ -426,7 +431,6 @@ footer {
 .rowfooter p {
 	color: black;
 	font-size: 18px;
-	font-weight: bold;
 	font-family: Quicksand;
 }
 .rowfooter .smed a {
@@ -549,6 +553,10 @@ iframe {
 	.particles-js-canvas-el {
 		min-height: 57vw;
 		opacity: 0.5;
+	}
+	.rowfooter img {
+		width: 5vw;
+		height: 10vw;
 	}
 }
 @media (max-width: 576px) {
