@@ -170,9 +170,9 @@ nav div ul li a {
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
-	background-size: 90% 80%;
-	background-position: center;
-	height: calc(75vh - 81px);
+	background-size: 80% 100%;
+	background-position: 20%;
+	height: calc(70vh - 81px);
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -628,6 +628,10 @@ iframe {
 	.particles-js-canvas-el {
 		min-height: 110vw;
 		opacity: 0.5;
+	}
+	#intro {
+	background-size: 80% 70%;
+	background-position: 20%;
 	}
 }
 @media (max-width: 322px) {
