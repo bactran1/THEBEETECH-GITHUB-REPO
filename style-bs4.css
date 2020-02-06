@@ -12,7 +12,6 @@ html {
 }
 body{
 	background-color: #232323;
-	height: 100%;
 	width:100%;
 	overflow-x: hidden;
 }
@@ -28,12 +27,12 @@ hr{
 /*-------------------------------------------------------*/
 /*-------------------------------------------------------*/
 /*---Scroll to Top Button----------------------------------------------*/
-#myBtn {
+#scrtopbtn {
 	display: none;
 	position: fixed;
 	bottom: 50px;
 	right: 2.7vw;
-	z-index: 990;
+	z-index: 9999;
 	font-size: 30px;
 	border: none;
 	outline: none;
@@ -43,9 +42,19 @@ hr{
 	padding: 5px 7px 12px 7px;
 	border-radius: 200px;
 }
-#myBtn:hover {
+#scrtopbtn:hover {
 	background-color: #555;
 }
+/*---One Mouse scroll to section----------------------------------------------*/
+.scroll {
+	scroll-snap-type: y mandatory;
+	overflow-y: scroll;
+	max-height:100vh;
+  }
+.sc {
+	scroll-snap-align: end;
+  }
+
 /******** NAVIGATION BAR **********************************************************/
 .bg-light{
 	/*background-image: linear-gradient(#F69E00,#F69E00,#F69E00,#F69E00,#F69E00,#F69E00,#F69E00,#F69E00, #343434) !important;
@@ -172,7 +181,7 @@ nav div ul li a {
 	-o-background-size: cover;
 	background-size: 80% 100%;
 	background-position: 20%;
-	height: calc(70vh - 81px);
+	height: calc(100vh - 377px);
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -363,7 +372,7 @@ nav div ul li a {
 }
 /******** MEET THE TEAM **********************************************************/
 .meettheteam .meet {
-	color: #ededed;
+	color: #232323;
 	font-size: 30px;
 	font-weight: bold;
 	font-family: Quicksand;
@@ -377,24 +386,24 @@ nav div ul li a {
 }
 .team .card {
 	padding: 25px;
-	background-color: #232323;
+	background-color: transparent;
 	border: none;
 }
 .team .card-title {
-	color: #ededed;
+	color: #232323;
 	font-family: 'Bebas Neue', cursive;
 	margin: 17px;
 	font-size: 2vw;
 	letter-spacing: 5px;
 }
 .team .card-text {
-	color: #ededed;
+	color: #232323;
 	font-family: monospace;
 	margin: 17px;
 	font-size: 1.2vw;
 }
 .team .card-body i {
-	color: #ededed;
+	color: #232323;
 	padding: 10px;
 	-webkit-transition: color, padding 0.3s;
 	transition: color, padding 0.3s;
@@ -483,6 +492,16 @@ iframe {
 }
 /*---Media Queries --*/
 @media (max-width: 1200px) {
+	.scroll {
+		scroll-snap-type: none;
+		overflow-y: scroll;
+		max-height: none;
+	  
+	  }
+	.sc {
+		scroll-snap-align: none;
+		height: auto;
+	  }
 	.nwsltr h1 {
 		font-size: 3vw;
 	}

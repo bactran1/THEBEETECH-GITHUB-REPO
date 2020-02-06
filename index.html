@@ -45,9 +45,9 @@
 
     <body>
     <!--Scroll to Top Button-->
-    <button onclick="topFunction()" class="btn btn-light" id="myBtn" title="Go to top"><i class="fas fa-chevron-up rounded-circle" style="font-size: large;"></i></button>
+    <button onclick="topFunction()" class="btn btn-light" id="scrtopbtn" title="Go to top"><i class="fas fa-chevron-up rounded-circle" style="font-size: large;"></i></button>
     <!-- Navigation -->
-    <div class="projappr">
+    <div class="projappr scroll">
         <nav class="navbar navbar-expand-xl navbar-light bg-light main-nav">
             <a class="navbar-brand" href="index.html"><img src="safari-pinned-tab.svg" alt="logo" width="55" height="55" class="imgclass" style="margin-right: 5%;">
                 BEE TECHNOLOGIES &#169
@@ -97,7 +97,7 @@
                 </div>
             </div>
             <!--SIGN UP-->
-            <div class="container-fluid">
+            <div class="container-fluid sc">
                 <div class="row text-center projtitle p-4">
                     <div class="col-12 align-self-center py-4" style="color:#ededed"><i class="fab fa-connectdevelop faa-burst animated fa-lg pr-3"></i>SIGN UP FOR OUR NEWSLETTER</div>
                 </div>
@@ -132,7 +132,7 @@
             </div>
         <!--END SIGN UP-->
         <!--OUR PROJECTS-->
-            <div class="proj" id="ourproj">
+            <div class="proj sc" id="ourproj">
                 <div class="container-fluid">
                     <div class="row text-center projtitle p-4">
                         <div class="col-12 align-self-center py-4"><i class="fas fa-project-diagram fa-lg faa-horizontal animated" style="padding-right:20px"></i>OUR PROJECTS</div>
@@ -152,7 +152,7 @@
                 </div>
             </div>
         <!--OUR APPROACH-->
-            <div class="appr2" id="ourappr">
+            <div class="appr2 sc pb-4" id="ourappr">
                 <div class="container-fluid">
                     <div class="row text-center apprtitle p-4">
                         <div class="col-12 align-self-center py-4"><i class="fas fa-wrench fa-lg faa-wrench animated px-1"></i>OUR APPROACH</div>
@@ -173,55 +173,56 @@
         </section>
 
     <!--- Meet the team -->
-        <section class="meettheteam" id="meetteam">
-            <div class="container-fluid">
-                <div class="row text-center meet p-4">
-                    <div class="col-12 align-self-center py-4"><i class="fas fa-users fa-lg faa-pulse animated" style="padding-right:20px"></i>MEET THE TEAM</div>
-                </div>
-            </div>
-        </section>
-
-    <!--- Cards (The Teamn) -->
-        <div class="container team">
-            <div class="row text-center justify-content-around pb-5">
-                <div class="col-lg-5 col-md-5">
-                    <div class="card p-0">
-                        <div class="card-body">
-                            <img class="card-img-top mb-3 rounded-circle" src="img/headshotBac.jpg" alt="CEO">
-                            <h5 class="card-title">BAC TRAN</h5>
-                            <p class="card-text"> Mechanical Engineer / Founder</p>
-                            <p class="card-text"> University of Washington Seattle</p>
-                            <a class="col-md-3 justify-content-center" href="https://www.linkedin.com/in/btran0222" target="blank">
-                                <i class="fab fa-linkedin align-self-center fa-2x"></i>
-                            </a>
-                            <a class="col-md-3" href="#" title="Coming Soon!">
-                                <i class="fab fa-instagram fa-2x"></i>
-                            </a>
-                        </div>
+        <div style="background-color: blanchedalmond;">
+            <section class="meettheteam" id="meetteam">
+                <div class="container-fluid">
+                    <div class="row text-center meet p-4">
+                        <div class="col-12 align-self-center py-4"><i class="fas fa-users fa-lg faa-pulse animated" style="padding-right:20px"></i>MEET THE TEAM</div>
                     </div>
                 </div>
-                <div class="col-lg-5 col-md-5">
-                    <div class="card p-0">
-                        <div class="card-body">
-                            <img class="card-img-top mb-3 rounded-circle" src="safari-pinned-tab.svg" alt="Cho Hau" title="Chó Hậu!!">
-                            <h5 class="card-title">HAU TRAN</h5>
-                            <p class="card-text"> Software / Electrical Engineer</p>
-                            <p class="card-text"> Microsoft Inc. Redmond Washington</p>
-                            <a class="col-md-3" href="#">
-                                <i class="fab fa-linkedin fa-2x"></i>
-                            </a>
-                            <a class="col-md-3" href="#" title="Coming Soon!">
-                                <i class="fab fa-instagram fa-2x"></i>
-                            </a>
+            </section>
+
+        <!--- Cards (The Teamn) -->
+            <div class="container team">
+                <div class="row text-center justify-content-around pb-5">
+                    <div class="col-lg-5 col-md-5">
+                        <div class="card p-0">
+                            <div class="card-body">
+                                <img class="card-img-top mb-3 rounded-circle" src="img/headshotBac.jpg" alt="CEO">
+                                <h5 class="card-title">BAC TRAN</h5>
+                                <p class="card-text"> Mechanical Engineer / Founder</p>
+                                <p class="card-text"> University of Washington Seattle</p>
+                                <a class="col-md-3 justify-content-center" href="https://www.linkedin.com/in/btran0222" target="blank">
+                                    <i class="fab fa-linkedin align-self-center fa-2x"></i>
+                                </a>
+                                <a class="col-md-3" href="#" title="Coming Soon!">
+                                    <i class="fab fa-instagram fa-2x"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-5">
+                        <div class="card p-0">
+                            <div class="card-body">
+                                <img class="card-img-top mb-3 rounded-circle" src="safari-pinned-tab.svg" alt="Cho Hau" title="Chó Hậu!!">
+                                <h5 class="card-title">HAU TRAN</h5>
+                                <p class="card-text"> Software / Electrical Engineer</p>
+                                <p class="card-text"> Microsoft Inc. Redmond Washington</p>
+                                <a class="col-md-3" href="#">
+                                    <i class="fab fa-linkedin fa-2x"></i>
+                                </a>
+                                <a class="col-md-3" href="#" title="Coming Soon!">
+                                    <i class="fab fa-instagram fa-2x"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
     <!--- Footer -->
         <footer>
-            <div class="row container-fluid text-center rowfooter py-3">
+            <div class="row container-fluid text-center rowfooter py-3 sc">
                 <div class="col-md-4 smed align-self-center">
                     <a class="col-md-3" href="#">
                         <i class="fab fa-facebook-square"></i>
@@ -246,11 +247,6 @@
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-
-    <!--For Particles Effect JS-->
-    <script src="js/particles.js"></script>
-    <script src="js/app.js"></script>
-    <!---------------------------------------------------------------->
     
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
