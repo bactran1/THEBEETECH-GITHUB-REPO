@@ -174,7 +174,7 @@ nav div ul li a {
 }
 /******** Testing **********************************************************/
 #intro {
-	background-color: blanchedalmond;
+	background-color: white;
 	background-image:url(img/smart\ house.png);
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -342,7 +342,7 @@ nav div ul li a {
 	line-height: 4.1vw;
 }
 #ourproj {
-	background-color: blanchedalmond;
+	background-color: #E5D3B8;
 }
 /******** Our Approach **********************************************************/
 .appr2 .apprtitle {
