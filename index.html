@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <!--Open Graph-->
-        <meta property="og:image" content="https://www.beetech.dev/smarthouse.jpg" />
+        <meta property="og:image" content="https://www.beetech.dev/family_.png" />
         <meta property="og:title" content="Vietnamese Smart Home For The People" />
         <meta property="og:url" content="https://www.beetech.dev/" />
         <meta property="og:description" content="We bring smart home security and convenience at an affordable price." />
@@ -47,19 +47,18 @@
 
     <body>
 
-    <div data-spy="affix" id="dot-nav">
-        <ul>
-            <li class="awesome-tooltip active" title="Home"><a href="index.html#topnav"></a></li>
-            <li class="awesome-tooltip" title="Projects"><a href="index.html#ourproj"></a></li>
-            <li class="awesome-tooltip" title="Approach"><a href="#ourappr"></a></li>
-            <li class="awesome-tooltip" title="Team"><a href="#meetteam"></a></li>
-        </ul>
-    </div>
+        <div data-spy="affix" id="dot-nav">
+            <ul>
+                <li class="awesome-tooltip active" title="Home"><a href="#landing" style="z-index: 999;"> </a></li>
+                <li class="awesome-tooltip" title="Projects"><a href="#ourproj"> </a></li>
+                <li class="awesome-tooltip" title="Approach"><a href="#ourappr"> </a></li>
+                <li class="awesome-tooltip" title="Team"><a href="#meetteam"> </a></li>
+            </ul>
+        </div>
     <!--Scroll to Top Button-->
-    <button onclick="topFunction()" class="btn btn-light" id="scrtopbtn" title="Go to top"><i class="fas fa-chevron-up rounded-circle" style="font-size: large;"></i></button>
+        <button onclick="topFunction()" class="btn btn-light" id="scrtopbtn" title="Go to top"><i class="fas fa-chevron-up rounded-circle" style="font-size: large;"></i></button>
     <!-- Navigation -->
-    <div class="projappr scroll">
-        <nav class="navbar navbar-expand-xl navbar-light bg-light main-nav" id="topnav">
+        <nav class="navbar navbar-expand-xl navbar-light bg-light main-nav">
             <a class="navbar-brand" href="index.html"><img src="safari-pinned-tab.svg" alt="logo" width="55" height="55" class="imgclass" style="margin-right: 5%;">
                 BEE TECHNOLOGIES &#169
             </a>
@@ -95,7 +94,7 @@
         </nav>
 
     <!-- New Landing page --------------------------------------------------------------------->
-        <section class="proj m-0 p-0">
+        <section class="proj m-0 p-0" id="landing" style="height: 100%;">
             <div class="container-fluid p-0 m-0">
                 <div class="landing row p-0 m-0" id="intro">
                     <div class="col-md-4 col-6 txtbox p-3 rounded">
@@ -141,9 +140,11 @@
                     </form>
                 </div>
             </div>
+        </section>
         <!--END SIGN UP-->
+        <section class="d-flex flex-column justify-content-center" id="ourproj" style="height:100%">
         <!--OUR PROJECTS-->
-            <div class="proj sc" id="ourproj">
+            <div class="proj sc">
                 <div class="container-fluid">
                     <div class="row text-center projtitle p-4">
                         <div class="col-12 align-self-center py-4"><i class="fas fa-project-diagram fa-lg faa-horizontal animated" style="padding-right:20px"></i>OUR PROJECTS</div>
@@ -164,8 +165,10 @@
                     </div>
                 </div>
             </div>
+        </section>
         <!--OUR APPROACH-->
-            <div class="appr2 sc pb-4" id="ourappr">
+        <section class="d-flex flex-column justify-content-center" id="ourappr" style="height:100%">
+            <div class="appr2 sc pb-4">
                 <div class="container-fluid">
                     <div class="row text-center apprtitle p-4">
                         <div class="col-12 align-self-center py-4"><i class="fas fa-wrench fa-lg faa-wrench animated px-1"></i>OUR APPROACH</div>
@@ -185,10 +188,9 @@
                 </div>
             </div>
         </section>
-
     <!--- Meet the team -->
-        <div>
-            <section class="meettheteam" id="meetteam">
+        <section class="d-flex flex-column justify-content-center" id="meetteam" style="height:100%">
+            <section class="meettheteam">
                 <div class="container-fluid">
                     <div class="row text-center meet p-4">
                         <div class="col-12 align-self-center py-4"><i class="fas fa-users fa-lg faa-pulse animated" style="padding-right:20px"></i>MEET THE TEAM</div>
@@ -233,7 +235,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     <!--- Footer -->
         <footer>
             <div class="row container-fluid text-center rowfooter py-3 sc">
@@ -258,7 +260,6 @@
                 </div>
             </div>
         </footer>
-    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     
