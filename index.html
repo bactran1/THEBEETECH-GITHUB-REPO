@@ -40,15 +40,26 @@
         <script src="js/toggler.js"></script>
         <script src="js/carousel.js"></script>
         <link rel="stylesheet" href="style-bs4.css">
+        <link rel="stylesheet" href="main.css">
+
         <title> Bee Technologies - Home </title>
     </head>
 
     <body>
+
+    <div data-spy="affix" id="dot-nav">
+        <ul>
+            <li class="awesome-tooltip active" title="Home"><a href="index.html#topnav"></a></li>
+            <li class="awesome-tooltip" title="Projects"><a href="index.html#ourproj"></a></li>
+            <li class="awesome-tooltip" title="Approach"><a href="#ourappr"></a></li>
+            <li class="awesome-tooltip" title="Team"><a href="#meetteam"></a></li>
+        </ul>
+    </div>
     <!--Scroll to Top Button-->
     <button onclick="topFunction()" class="btn btn-light" id="scrtopbtn" title="Go to top"><i class="fas fa-chevron-up rounded-circle" style="font-size: large;"></i></button>
     <!-- Navigation -->
     <div class="projappr scroll">
-        <nav class="navbar navbar-expand-xl navbar-light bg-light main-nav">
+        <nav class="navbar navbar-expand-xl navbar-light bg-light main-nav" id="topnav">
             <a class="navbar-brand" href="index.html"><img src="safari-pinned-tab.svg" alt="logo" width="55" height="55" class="imgclass" style="margin-right: 5%;">
                 BEE TECHNOLOGIES &#169
             </a>
@@ -60,22 +71,22 @@
             
             <div class="collapse navbar-collapse ml-5" id="navbarNav">
                 <ul class="navbar-nav nav-left">
-                  <li class="nav-item active">
+                  <li class="nav-item active" id="home">
                     <a class="nav-link" href="index.html">HOME <span class="sr-only">(current)</span></a>
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item noactive">
                     <a class="nav-link" href="#ourproj">PROJECTS</a>
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item noactive">
                     <a class="nav-link" href="#ourappr">APPROACH</a>
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item noactive">
                     <a class="nav-link" href="#meetteam">ABOUT US</a>
                   </li>
                 </ul>
                 <div class="mrt ml-auto">
                     <ul class="navbar-nav nav-right">
-                        <li class="nav-item">
+                        <li class="nav-item noactive">
                             <a class="nav-link" href="contact.html">CONTACT</a>
                           </li>     
                     </ul>
@@ -99,7 +110,7 @@
             <!--SIGN UP-->
             <div class="container-fluid sc">
                 <div class="row text-center projtitle p-4">
-                    <div class="col-12 align-self-center py-4" style="color:#ededed"><i class="fab fa-connectdevelop faa-burst animated fa-lg pr-3"></i>SIGN UP FOR OUR NEWSLETTER</div>
+                    <div class="col-12 align-self-center py-4" style="color:var(--bee-black)"><i class="fab fa-connectdevelop faa-burst animated fa-lg pr-3"></i>SIGN UP FOR OUR NEWSLETTER</div>
                 </div>
             </div>
             <div class="container">
@@ -142,8 +153,10 @@
                     <div class="row text-center">
                         <div class="col-6 align-self-center projects">
                             <p class="text-justify pr-0">
-                                <img src="safari-pinned-tab.svg" class="img-responsive" style="width:2.7vw;height: 2.7vw;margin-right:10px;color:var(--bee-yellow);">Bee Technologies is a tech start-up that focuses on developing modern, technologically advanced and affordable for Vietnamese market.</p>
-                            <p class="text-justify pr-0">With the increment in crime rate in urban areas, a much needed affordable solution is key.</p>
+                                <img src="safari-pinned-tab.svg" class="img-responsive" style="width:2.7vw;height: 2.7vw;margin-right:10px;color:var(--bee-yellow);">Bee Technologies is a tech start-up that focuses on developing modern, technologically advanced and affordable for the Vietnamese market.
+                            </p>
+                            <hr>
+                            <p class="text-justify pr-0">With the increment in crime rate in urban areas, a much needed affordable solution is crucial.</p>
                         </div>
                         <div class="col-6 align-self-center pr-4 pb-3 projects" style="padding:0;">
                             <img src="img/smarthome.svg">
@@ -161,11 +174,12 @@
                 <div class="container-fluid">
                     <div class="row text-center">
                         <div class="col-6 align-self-center pl-4 apprs" style="padding:0;">
-                            <img class="img-fluid" src="img/smarthome devices.svg">
+                            <img class="img-fluid" src="img/smarthouse.png">
                         </div>
                         <div class="col-6 align-self-center apprs">
                             <p class="text-justify pl-3">Our company focuses on various security measures such as Cameras, Switches, Deadlock, Lightbulbs and others automation devices.</p>
-                            <p class="text-justify pl-3"><i class="fas fa-robot faa-tada animated fa-2x" style="color:#f69e00"></i> A.I is awesome! With the implementation of advanced A.I. technology in detecting potential threats, our smart home devices can bring comfort and security to your household.</p>
+                            <hr>
+                            <p class="text-justify pl-3"><i class="fas fa-robot faa-tada animated fa-2x" style="color:#2C5F2DFF;"></i> A.I is awesome! With the implementation of advanced A.I. technology in detecting potential threats, our smart home devices can bring comfort and security to your household.</p>
                         </div>
                     </div>
                 </div>
@@ -173,7 +187,7 @@
         </section>
 
     <!--- Meet the team -->
-        <div style="background-color: #E5D3B8;">
+        <div>
             <section class="meettheteam" id="meetteam">
                 <div class="container-fluid">
                     <div class="row text-center meet p-4">
@@ -239,7 +253,7 @@
                 </div>
                 <div class="col-md-4 align-self-center ftlogo py-3">
                     <a class="" href="#">
-                        <img src="safari-pinned-tab.svg" class="imgclassfooter rounded-circle">
+                        <img src="safari-pinned-tab.svg" class="imgclassfooter rounded-circle faa-spin animated-hover">
                     </a>
                 </div>
             </div>
@@ -253,6 +267,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="js/bootstrap-swipe-carousel.min.js"></script>
     <script src="js/scrolltop.js"></script>
+    <script src="js/bordernav.js"></script>
+    <script src="js/navdots.js"></script>
   </body>
 
 </html>
