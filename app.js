@@ -154,7 +154,7 @@ app.get('/success', (req, res) => {
 app.get('/contact', (req, res) => {
 	res.sendFile('contact.html', { root: path.join(__dirname, '/views') });
 });
-//------END AUTHENTICATION-------------------//
+//------END AUTHENTICATION--------------------------------------------------------//
 
 //Create Table
 app.get('/createDB', (req, res) => {
