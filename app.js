@@ -15,11 +15,11 @@ const session = require('express-session');
 const methodOverride = require('method-override');
 
 const initializePassport = require('./passport-config');
-initializePassport(
-	passport,
-	email => users.find(user => user.email === email),
-	id => users.find(user => user.id === id)
-);
+// initializePassport(
+// 	passport,
+// 	email => users.find(user => user.email === email),
+// 	id => users.find(user => user.id === id)
+// );
 
 //Set View Engine for EJS
 app.set('view-engine', 'ejs');
@@ -30,24 +30,54 @@ const rl = readline.createInterface({
 });
 
 //Connect to DB
-var connection = mysql.createPool({
+//Local ID,PASS
+var users = [];
+
+var connection1 = mysql.createPool({
 	connectionLimit: 100,
+	multipleStatements: true,
 	host: process.env.DB_HOST,
 	user: process.env.DB_USER,
 	password: process.env.DB_PASS,
 	database: process.env.DB_DB
 });
 
-// var connection = mysql.createPool({
-//     connectionLimit:100,
-//     host:'localhost',
-//     user:'root',
-//     database: 'testbac'
-// });
+var connection2 = mysql.createPool({
+	connectionLimit: 100,
+	multipleStatements: true,
+	host: 'localhost',
+	user: 'root',
+	database: 'testbac'
+});
+
+var connection = connection1;
+
+connection.getConnection(function(error, tempCont) {
+	if (!!error) {
+		tempCont.release();
+		console.log('Error');
+		return;
+	} else {
+		console.log('Connected');
+		tempCont.query('SELECT * FROM testingDB', function(error, rows, fields) {
+			tempCont.release();
+			if (!!error) {
+				console.log(error);
+			} else {
+				users = JSON.parse(JSON.stringify(rows));
+				console.log(users);
+				console.log('Successful query: Retrieve Entire DB');
+				initializePassport(
+					passport,
+					email => users.find(user => user.email === email),
+					id => users.find(user => user.id === id)
+				);
+			}
+		});
+	}
+});
 
 //TESTING APP LOGIN
-//Local ID,PASS
-const users = [];
 
 //Middlewares
 //JSON parser
@@ -110,12 +140,83 @@ app.get('/register', checkNotAuth, (req, res) => {
 app.post('/register', checkNotAuth, async (req, res) => {
 	try {
 		const hashedPW = await bcrypt.hash(req.body.password, 10);
-		users.push({
-			id: Date.now().toString(),
-			name: `${req.body.firstname} ${req.body.lastname}`,
-			email: req.body.email,
-			password: hashedPW
+
+		//REPLACE by DATABASE PUSH SYNXTAX
+		// users.push({
+		// 	id: Date.now().toString(),
+		// 	name: `${req.body.firstname} ${req.body.lastname}`,
+		// 	email: req.body.email,
+		// 	password: hashedPW
+		// });
+
+		connection.getConnection(function(error, tempCont) {
+			if (!!error) {
+				tempCont.release();
+				console.log('Error');
+			} else {
+				console.log('Connected');
+				//Check if USERNAME IS TAKEN
+				// tempCont.query('SELECT * FROM testingDB', function(
+				// 	error,
+				// 	rows,
+				// 	fields
+				// ) {
+				// 	if (!!error) {
+				// 		console.log(error);
+				// 	} else {
+				// 		rows.findOne({ email: req.body.email }, (err, user) => {
+				// 			if (err) {
+				// 				console.log(err);
+				// 			}
+				// 			if (user) {
+				// 				console.log(user);
+				// 			}
+				// 		});
+				// 	}
+				// });
+
+				let id = Date.now().toString();
+				let name = `${req.body.firstname} ${req.body.lastname}`;
+				let email = req.body.email;
+				let password = hashedPW;
+
+				let post = { id: id, name: name, email: email, password: password };
+				let sql = `INSERT INTO testingDB SET ?`;
+
+				tempCont.query(sql, post, (error, rows, fields) => {
+					//tempCont.release();
+					if (!!error) {
+						console.log(error);
+					} else {
+						console.log(
+							`Item with ID: ${id}, Name: ${name}, Email: ${email} and PW: ${password} added to table testingDB`
+						);
+					}
+				});
+
+				tempCont.query('SELECT * FROM testingDB', function(
+					error,
+					rows,
+					fields
+				) {
+					tempCont.release();
+					if (!!error) {
+						console.log(error);
+					} else {
+						users = JSON.parse(JSON.stringify(rows));
+						console.log(users);
+						console.log('Successful query: Retrieve Entire DB');
+						initializePassport(
+							passport,
+							email => users.find(user => user.email === email),
+							id => users.find(user => user.id === id)
+						);
+					}
+				});
+			}
 		});
+
+		//-----------------------------------------//
 		res.redirect('/success');
 	} catch {
 		res.redirect('/register');
@@ -152,7 +253,7 @@ app.get('/success', (req, res) => {
 
 //Prompt USER to CONTACT PAGE
 app.get('/contact', (req, res) => {
-	res.sendFile('contact.html', { root: path.join(__dirname, '/views') });
+	res.render('contact.ejs');
 });
 //------END AUTHENTICATION--------------------------------------------------------//
 
@@ -175,9 +276,8 @@ app.get('/createDB', (req, res) => {
 });
 
 //Create table
-app.get('/createPostTable', (req, res) => {
-	let sql =
-		'CREATE TABLE posts(id int AUTO_INCREMENT, title VARCHAR(255), body VARCHAR(255), PRIMARY KEY(id))';
+app.get('/createPostTable/:TbName', (req, res) => {
+	let sql = `CREATE TABLE ${req.params.TbName}(id int AUTO_INCREMENT, name VARCHAR(255), email VARCHAR(255), password VARCHAR PRIMARY KEY(id))`;
 	connection.query(sql, (err, result) => {
 		if (!!err) {
 			console.log(err);
@@ -216,7 +316,7 @@ app.get('/addpost/:id/:name', (req, res) => {
 	});
 });
 
-//SELECT posts
+//SELECT and SHOWS posts
 app.get('/db', (req, res) => {
 	connection.getConnection(function(error, tempCont) {
 		if (!!error) {
@@ -231,7 +331,9 @@ app.get('/db', (req, res) => {
 					console.log(error);
 				} else {
 					res.send(rows);
-					console.log('Successful query: Retrieve Entire DB');
+					console.log(
+						`Successful query: Retrieve Entire table testingDB in testbac DB`
+					);
 				}
 			});
 		}
@@ -252,8 +354,9 @@ app.get('/getpost/:id', (req, res) => {
 				if (!!error) {
 					console.log(error);
 				} else {
-					console.log('Single Post fetched!!');
+					console.log(`Single Post with ID ${req.params.id} fetched!!`);
 					res.send(rows);
+					console.log(rows[0]);
 				}
 			});
 		}
@@ -296,7 +399,7 @@ app.get('/addColumn/:colName', (req, res) => {
 		} else {
 			console.log('Connected');
 			let newColumn = req.params.colName;
-			let sql = `ALTER TABLE testingDB ADD COLUMN ${newColumn} VARCHAR(255) AFTER Name`;
+			let sql = `ALTER TABLE testingDB ADD COLUMN ${newColumn} VARCHAR(255)`;
 			tempCont.query(sql, (error, rows) => {
 				tempCont.release();
 				if (!!error) {
@@ -355,4 +458,4 @@ app.get('/deletePost/:id', (req, res) => {
 
 //Read env object
 const port = process.env.PORT || 3000;
-app.listen(port, () => console.log(`Listening Bac on port ${port}`));
+app.listen(port, () => console.log(`Listening on port ${port}`));
