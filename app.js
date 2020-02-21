@@ -42,6 +42,15 @@ var connection1 = mysql.createPool({
 	database: process.env.DB_DB
 });
 
+var connection3 = mysql.createPool({
+	connectionLimit: 100,
+	multipleStatements: true,
+	host: process.env.DB_HOST2,
+	user: process.env.DB_USER2,
+	password: process.env.DB_PASS2,
+	database: process.env.DB_DB2
+});
+
 var connection2 = mysql.createPool({
 	connectionLimit: 100,
 	multipleStatements: true,
@@ -50,7 +59,7 @@ var connection2 = mysql.createPool({
 	database: 'testbac'
 });
 
-var connection = connection1;
+var connection = connection3;
 
 connection.getConnection(function(error, tempCont) {
 	if (!!error) {
