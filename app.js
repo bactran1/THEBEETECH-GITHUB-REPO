@@ -1,3 +1,4 @@
+require('newrelic');
 const express = require('express');
 //Set View Engine for EJS
 const app = express();
