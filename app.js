@@ -1,4 +1,3 @@
-require('newrelic');
 const express = require('express');
 //Set View Engine for EJS
 const app = express();
@@ -68,7 +67,7 @@ connection.getConnection(function(error, tempCont) {
 		console.log('Error');
 		return;
 	} else {
-		console.log('Connected');
+		console.log('Connected to DB');
 		tempCont.query('SELECT * FROM testingDB', function(error, rows, fields) {
 			tempCont.release();
 			if (!!error) {
@@ -120,6 +119,12 @@ app.get('/', (req, res) => {
 	res.render('index.ejs');
 });
 
+//Make Heroku app awake using cron-job.org
+app.get('/cron', (req, res) => {
+	//	res.sendFile("index.html", { root: path.join(__dirname, "/public") });
+	res.send('cron haha');
+});
+
 //View LOGIN page to LOGIN
 app.get('/login', checkNotAuth, (req, res) => {
 	res.render('login.ejs');
@@ -164,27 +169,7 @@ app.post('/register', checkNotAuth, async (req, res) => {
 				tempCont.release();
 				console.log('Error');
 			} else {
-				console.log('Connected');
-				//Check if USERNAME IS TAKEN
-				// tempCont.query('SELECT * FROM testingDB', function(
-				// 	error,
-				// 	rows,
-				// 	fields
-				// ) {
-				// 	if (!!error) {
-				// 		console.log(error);
-				// 	} else {
-				// 		rows.findOne({ email: req.body.email }, (err, user) => {
-				// 			if (err) {
-				// 				console.log(err);
-				// 			}
-				// 			if (user) {
-				// 				console.log(user);
-				// 			}
-				// 		});
-				// 	}
-				// });
-
+				console.log('Connected to DB');
 				let id = Date.now().toString();
 				let name = `${req.body.firstname} ${req.body.lastname}`;
 				let email = req.body.email;
@@ -236,6 +221,31 @@ app.post('/register', checkNotAuth, async (req, res) => {
 });
 
 app.delete('/logout', (req, res) => {
+	//RETRIEVE user data from DB is user deleted their account
+	connection.getConnection(function(error, tempCont) {
+		if (!!error) {
+			tempCont.release();
+			console.log('Error');
+			return;
+		} else {
+			console.log('Re-retrieved data from DB');
+			tempCont.query('SELECT * FROM testingDB', function(error, rows, fields) {
+				tempCont.release();
+				if (!!error) {
+					console.log(error);
+				} else {
+					users = JSON.parse(JSON.stringify(rows));
+					console.log(users);
+					console.log('Successful query: Retrieve Entire DB');
+					initializePassport(
+						passport,
+						email => users.find(user => user.email === email),
+						id => users.find(user => user.id === id)
+					);
+				}
+			});
+		}
+	});
 	req.logOut();
 	res.redirect('/login');
 });
