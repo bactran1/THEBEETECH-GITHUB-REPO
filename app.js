@@ -14,6 +14,27 @@ const flash = require('express-flash');
 const session = require('express-session');
 const methodOverride = require('method-override');
 
+//FOR SENDING EMAIL
+const nodeMailer = require('nodemailer');
+const hbs = require('nodemailer-express-handlebars');
+
+// create reusable transporter object using the default SMTP transport
+let transporter = nodeMailer.createTransport({
+	host: process.env.EMAIL_SERVER,
+	port: 465,
+	secure: true, // true for 465, false for other ports
+	dkim: {
+		domainName: 'beetech.dev',
+		keySelector: 'auth',
+		privateKey: process.env.EMAIL_DKIM_KEY
+	},
+	auth: {
+		user: process.env.EMAIL_USER, // generated ethereal user
+		pass: process.env.EMAIL_PASS // generated ethereal password
+	}
+});
+
+//CREATE AUTH
 const initializePassport = require('./passport-config');
 // initializePassport(
 // 	passport,
@@ -93,7 +114,7 @@ connection.getConnection(function(error, tempCont) {
 var bodyParser = require('body-parser');
 app.use(bodyParser.json()); // support json encoded bodies
 //Use JSON
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 
 //include views folder
 app.use(express.static(__dirname + '/views'));
@@ -186,6 +207,40 @@ app.post('/register', checkNotAuth, async (req, res) => {
 						console.log(
 							`Item with ID: ${id}, Name: ${name}, Email: ${email} and PW: ${password} added to table testingDB`
 						);
+						//SEND CONFIRMATION EMAIL AFTER REGISTRATION
+						transporter.use(
+							'compile',
+							hbs({
+								viewEngine: {
+									extName: '.handlebars',
+									partialsDir: './views/email-views/',
+									layoutsDir: './views/email-views/',
+									defaultLayout: 'success-registration'
+								},
+								viewPath: './views/email-views/'
+							})
+						);
+
+						let mailOption = {
+							from: 'BEE TECHNOLOGIES 🐝  <customersupport@beetech.dev>', // sender address
+							to: email, // list of receivers
+							subject: `Welcome to your new BeeTech Account ✔`, // Subject line
+							template: 'success-registration',
+							context: {
+								username: name,
+								email: email,
+								password: req.body.password
+							}
+						};
+
+						transporter.sendMail(mailOption, (err, data) => {
+							if (err) {
+								console.log('Error occurs');
+								console.log(err);
+							}
+							console.log('Email sent!!!');
+							console.log(data);
+						});
 					}
 				});
 
@@ -273,7 +328,14 @@ app.get('/success', (req, res) => {
 
 //Prompt USER to CONTACT PAGE
 app.get('/contact', (req, res) => {
+	//res.render('contact.ejs');
 	res.render('contact.ejs');
+});
+
+app.post('/contact', (req, res) => {
+	//res.render('contact.ejs');
+	console.log(req.body);
+	res.redirect('/success');
 });
 //------END AUTHENTICATION--------------------------------------------------------//
 

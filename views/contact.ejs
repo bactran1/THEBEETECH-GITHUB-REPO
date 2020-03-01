@@ -88,7 +88,7 @@
                 </div>
                 <div class="container">
                     <div class="row text-start mb-5">
-                        <form method="POST" data-netlify="true" class="col container p-3" action="/success">
+                        <form method="POST" class="col container p-3" action="/contact">
                             <div class="form-row mx-auto my-3">
                                 <div class="col">
                                     <label>First name</label>
@@ -108,20 +108,20 @@
                             <div class="form-row mx-auto my-3">
                                 <div class="col">
                                     <label>Subject</label>
-                                    <input type="text" name="Subject" id="SubjectID" class="form-control" placeholder="Subject" required>
+                                    <input name="Subject" type="text" id="SubjectID" class="form-control" placeholder="Subject" required>
                                 </div>
                             </div>
 
                             <div class="form-row mx-auto my-3">
                                 <div class="col">
                                     <label>Your Message</label>
-                                    <textarea rows="5" name="Message" class="form-control" id="MessageID" placeholder="Your Message" required></textarea>
+                                    <textarea name="Message" rows="5" class="form-control" id="MessageID" placeholder="Your Message" required></textarea>
                                 </div>
                             </div>
                             
                             <div class="form-row mx-auto my-3">
                                 <div class="col">
-                                    <div data-netlify-recaptcha="true" ></div>
+                                    <!-- ADD RECAPTCHA-->>
                                 </div>
                             </div>
 
