@@ -8,7 +8,7 @@ require('dotenv/config');
 const readline = require('readline');
 const Joi = require('joi');
 const ejs = require('ejs');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const passport = require('passport');
 const flash = require('express-flash');
 const session = require('express-session');
@@ -143,7 +143,7 @@ app.get('/', (req, res) => {
 //Make Heroku app awake using cron-job.org
 app.get('/cron', (req, res) => {
 	//	res.sendFile("index.html", { root: path.join(__dirname, "/public") });
-	res.send('cron haha');
+	res.send('cron successful!!!!!');
 });
 
 //View LOGIN page to LOGIN

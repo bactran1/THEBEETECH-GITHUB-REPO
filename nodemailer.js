@@ -49,35 +49,3 @@ transporter.sendMail(mailOption, (err, data) => {
 	console.log('Email sent!!!');
 	console.log(data);
 });
-
-transporter.use(
-	'compile',
-	hbs({
-		viewEngine: {
-			extName: '.handlebars',
-			partialsDir: './views/email-views/',
-			layoutsDir: './views/email-views/',
-			defaultLayout: 'success-registration'
-		},
-		viewPath: './views/email-views/'
-	})
-);
-
-let mailOption2 = {
-	from: 'BEE TECHNOLOGIES 🐝  <customersupport@beetech.dev>', // sender address
-	to: 'beetechco@gmail.com', // list of receivers
-	subject: `It's Bee Tech ✔`, // Subject line
-	template: 'success-registration',
-	context: {
-		username: 'Bac'
-	}
-};
-
-transporter.sendMail(mailOption2, (err, data) => {
-	if (err) {
-		console.log('Error occurs');
-		console.log(err);
-	}
-	console.log('Email sent!!!');
-	console.log(data);
-});

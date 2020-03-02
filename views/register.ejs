@@ -65,12 +65,15 @@
                     <a class="nav-link" href="./#ourappr">APPROACH</a>
                   </li>
                   <li class="nav-item noactive">
-                    <a class="nav-link" href="./l#meetteam">ABOUT US</a>
+                    <a class="nav-link" href="./#meetteam">ABOUT US</a>
                   </li>
                 </ul>
                 <div class="mrt ml-auto">
                     <ul class="navbar-nav nav-right">
                         <li class="nav-item active">
+                            <a class="nav-link" href="./login">SIGN IN</a>
+                        </li>   
+                        <li class="nav-item noactive">
                             <a class="nav-link" href="./contact">CONTACT</a>
                           </li>     
                     </ul>
@@ -86,39 +89,37 @@
             <section class="appr2 d-flex flex-column align-self-center">
                 <div class="container-fluid">
                     <div class="row text-center apprtitle p-3">
-                        <div class="col-12 mt-auto mb-auto py-2 pb-3" style="border:0;"><i class="far fa-envelope faa-bounce animated-hover fa-2x faa-float animated"></i> REGISTER</div>
+                        <div class="col-12 mt-auto mb-auto py-2 pb-3" style="border:0;"><i class="fas fa-user-plus faa-bounce animated-hover fa-2x faa-float animated"></i> REGISTER</div>
                     </div>
                 </div>
                 <div class="container" id="form1">
                     <div class="row text-start mb-5">
                         <form method="POST" class="col container p-3" action="/register">
-                            <div class="form-row mx-auto my-3">
-                                <div class="col-md-6">
+                            <div class="form-row mx-5 px-auto my-3 d-flex justify-content-center">
+                                <div class="col-md-6 px-0">
                                     <label>First name</label>
                                     <input name="firstname" type="text" class="form-control" id="FirstnameID" placeholder="First Name" required>
                                     <label>Last name</label>
                                     <input name="lastname" type="text" class="form-control" id="LastnameID" placeholder="Last Name" required>
                                 </div>
                             </div>
-                            <div class="form-row mx-auto my-3">
-                                <div class="col-md-6">
+                            <div class="form-row mx-5 px-auto my-3 d-flex justify-content-center">
+                                <div class="col-md-6 px-0">
                                     <label>Email</label>
                                     <input name="email" type="email" id="email" class="form-control" placeholder="Your Email" required>
                                 </div>
                             </div>
-                            <div class="form-row mx-auto my-3">
-                                <div class="col-md-6">
+                            <div class="form-row mx-5 px-auto my-3 d-flex justify-content-center subbtn">
+                                <div class="col-md-6 px-0">
                                     <label>Password (At least one number, one lowercase and uppercase letter)</label>
                                     <input type="password" name="password" id="password" class="form-control" minlength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Your Password" required>
                                 </div>
                             </div>
 
-                            <div class="form-row subbtn my-3">
-                                <div class="container-fluid" style="padding:0;">
-                                    <div class="col-md-6" style="padding: 0 10px;">
-                                        <button class="btn btn-light form-control" type="submit"><i class="fas fa-paper-plane"></i> SIGN UP</button>
+                            <div class="form-row mx-5 px-auto my-3 d-flex justify-content-center subbtn">
+                                    <div class="col-md-6 px-0">
+                                        <button class="btn btn-light form-control" type="submit"><i class="fas fa-user-plus"></i> SIGN UP</button>
                                     </div>
-                                </div>
                             </div>
                             <!--
                             <div class="form-row subbtn my-3">
@@ -129,12 +130,14 @@
                                 </div>
                             </div>
                             -->
-                            <div class="form-row mx-2 my-3" style="text-transform: uppercase;">Already have an account?</div>
-                            <div class="form-row subbtn my-3">
-                                <div class="container-fluid" style="padding:0;">
-                                    <div class="col-md-6" style="padding: 0 10px;">
-                                        <a class="btn btn-light form-control" href="./login" type="submit"><i class="fas fa-paper-plane"></i> LOGIN</a>
-                                    </div>
+                            <div class="form-row mx-5 px-auto my-3 d-flex justify-content-center subbtn">
+                                <div class="col-md-6 px-0 text-center" style="text-transform: uppercase; color: var(--bee-orange)">
+                                Already have an account?
+                                </div>
+                            </div>
+                            <div class="form-row mx-5 px-auto my-3 d-flex justify-content-center subbtn">
+                                <div class="col-md-6 px-0">
+                                        <a class="btn btn-light form-control" href="./login" type="submit"><i class="fas fa-sign-in-alt"></i> LOGIN</a>
                                 </div>
                             </div>
                         </form>
@@ -142,31 +145,7 @@
                 </div>
             </section>
         </div>
- 
-    <!--- Footer -->
-        <footer class="sticky-bottom">
-            <div class="row container-fluid text-center rowfooter py-3">
-                <div class="col-md-4 smed align-self-center">
-                    <a class="col-md-3" href="#">
-                        <i class="fab fa-facebook-square"></i>
-                    </a>
-                    <a class="col-md-3" href="#">
-                        <i class="fab fa-youtube-square"></i>
-                    </a>
-                    <a class="col-md-3" href="#">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </div>
-                <div class="col-md-4 justify-content-center align-self-center">
-                    <p class="col-md copy m-0">Bee Technologies &#169 2020. <br> All Rights Reserved.</p>
-                </div>
-                <div class="col-md-4 justify-content-center align-self-center ftlogo py-3">
-                    <a class="" href="#">
-                        <img src="android-chrome-384x384.png" class="imgclassfooter rounded-circle fa-2x faa-spin animated-hover">
-                    </a>
-                </div>
-            </div>
-        </footer>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
