@@ -8,7 +8,7 @@ require('dotenv/config');
 const readline = require('readline');
 const Joi = require('joi');
 const ejs = require('ejs');
-const bcrypt = require('bcryptjs');
+const bcrypt = require('bcrypt');
 const passport = require('passport');
 const flash = require('express-flash');
 const session = require('express-session');
