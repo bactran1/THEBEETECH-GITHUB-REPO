@@ -249,7 +249,7 @@ h3 {
 	transition: 0.25s ease-in-out;
 }
 .animated-icon1 span {
-	background: var(--bee-black);
+	background: var(--bee-orange);
 }
 .animated-icon1 span:nth-child(1) {
 	top: 0px;
