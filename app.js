@@ -13,7 +13,7 @@ const passport = require('passport');
 const flash = require('express-flash');
 const session = require('express-session');
 const methodOverride = require('method-override');
-
+const request = require('request');
 //FOR SENDING EMAIL
 const nodeMailer = require('nodemailer');
 const hbs = require('nodemailer-express-handlebars');
@@ -35,7 +35,10 @@ let transporter = nodeMailer.createTransport({
 });
 
 //CREATE AUTH
-const initializePassport = require('./passport-config');
+const PassportConf = require('./passport-config');
+const initializePassport = PassportConf.initialize;
+const chkEmail = PassportConf.chkEmail;
+
 // initializePassport(
 // 	passport,
 // 	email => users.find(user => user.email === email),
@@ -53,15 +56,6 @@ const rl = readline.createInterface({
 //Connect to DB
 //Local ID,PASS
 var users = [];
-
-var connection1 = mysql.createPool({
-	connectionLimit: 100,
-	multipleStatements: true,
-	host: process.env.DB_HOST,
-	user: process.env.DB_USER,
-	password: process.env.DB_PASS,
-	database: process.env.DB_DB
-});
 
 var connection3 = mysql.createPool({
 	connectionLimit: 100,
@@ -112,21 +106,27 @@ connection.getConnection(function(error, tempCont) {
 //Middlewares
 //JSON parser
 var bodyParser = require('body-parser');
-app.use(bodyParser.json()); // support json encoded bodies
 //Use JSON
 app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.json()); // support json encoded bodies
 
 //include views folder
 app.use(express.static(__dirname + '/views'));
 
-app.use(flash());
 app.use(
 	session({
 		secret: process.env.SESSION_SECRET,
-		resave: false,
+		resave: true,
 		saveUninitialized: false
 	})
 );
+app.use(flash());
+//Global Vars
+app.use((req, res, next) => {
+	res.locals.success_msg = req.flash('success_msg');
+	res.locals.error_msg = req.flash('error_msg');
+	next();
+});
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -177,97 +177,108 @@ app.post('/register', checkNotAuth, async (req, res) => {
 	try {
 		const hashedPW = await bcrypt.hash(req.body.password, 10);
 
-		//REPLACE by DATABASE PUSH SYNXTAX
-		// users.push({
-		// 	id: Date.now().toString(),
-		// 	name: `${req.body.firstname} ${req.body.lastname}`,
-		// 	email: req.body.email,
-		// 	password: hashedPW
-		// });
-
 		connection.getConnection(function(error, tempCont) {
-			if (!!error) {
-				tempCont.release();
-				console.log('Error');
-			} else {
-				console.log('Connected to DB');
-				let id = Date.now().toString();
-				let name = `${req.body.firstname} ${req.body.lastname}`;
-				let email = req.body.email;
-				let password = hashedPW;
-
-				let post = { id: id, name: name, email: email, password: password };
-				let sql = `INSERT INTO testingDB SET ?`;
-
-				tempCont.query(sql, post, (error, rows, fields) => {
-					//tempCont.release();
-					if (!!error) {
-						console.log(error);
-					} else {
-						console.log(
-							`Item with ID: ${id}, Name: ${name}, Email: ${email} and PW: ${password} added to table testingDB`
-						);
-						//SEND CONFIRMATION EMAIL AFTER REGISTRATION
-						transporter.use(
-							'compile',
-							hbs({
-								viewEngine: {
-									extName: '.handlebars',
-									partialsDir: './views/email-views/',
-									layoutsDir: './views/email-views/',
-									defaultLayout: 'success-registration'
-								},
-								viewPath: './views/email-views/'
-							})
-						);
-
-						let mailOption = {
-							from: 'BEE TECHNOLOGIES 🐝  <customersupport@beetech.dev>', // sender address
-							to: email, // list of receivers
-							subject: `Welcome to your new BeeTech Account ✔`, // Subject line
-							template: 'success-registration',
-							context: {
-								username: name,
-								email: email,
-								password: req.body.password
-							}
-						};
-
-						transporter.sendMail(mailOption, (err, data) => {
-							if (err) {
-								console.log('Error occurs');
-								console.log(err);
-							}
-							console.log('Email sent!!!');
-							console.log(data);
-						});
-					}
-				});
-
-				tempCont.query('SELECT * FROM testingDB', function(
-					error,
-					rows,
-					fields
-				) {
+			tempCont.query('SELECT * FROM testingDB', function(error, rows, fields) {
+				user = rows.find(user => user.email === req.body.email);
+				if (user) {
 					tempCont.release();
-					if (!!error) {
-						console.log(error);
-					} else {
-						users = JSON.parse(JSON.stringify(rows));
-						console.log(users);
-						console.log('Successful query: Retrieve Entire DB');
-						initializePassport(
-							passport,
-							email => users.find(user => user.email === email),
-							id => users.find(user => user.id === id)
-						);
-					}
-				});
-			}
-		});
+					console.log('email taken');
+					console.log(user);
+					req.flash(
+						'error_msg',
+						'That email has been taken. Please use a different email!'
+					);
+					res.redirect('/register');
+				} else if (req.body.password != req.body.password2) {
+					tempCont.release();
+					console.log('Passwords do not match');
+					console.log(req.body.password, req.body.password2);
+					req.flash('error_msg', 'Passwords do not match! Please try again');
+					res.redirect('/register');
+				} else if (!!error) {
+					console.log(error);
+					tempCont.release();
+					req.flash('error_msg', 'Failed to connect to server');
+					res.redirect('/register');
+				} else {
+					console.log('Connected to DB');
+					let id = Date.now().toString();
+					let name = `${req.body.firstname} ${req.body.lastname}`;
+					let email = req.body.email;
+					let password = hashedPW;
 
-		//-----------------------------------------//
-		res.redirect('/success');
+					let post = { id: id, name: name, email: email, password: password };
+					let sql = `INSERT INTO testingDB SET ?`;
+
+					tempCont.query(sql, post, (error, rows, fields) => {
+						//tempCont.release();
+						if (!!error) {
+							console.log(error);
+						} else {
+							console.log(
+								`Item with ID: ${id}, Name: ${name}, Email: ${email} and PW: ${password} added to table testingDB`
+							);
+							//SEND CONFIRMATION EMAIL AFTER REGISTRATION
+							transporter.use(
+								'compile',
+								hbs({
+									viewEngine: {
+										extName: '.handlebars',
+										partialsDir: './views/email-views/',
+										layoutsDir: './views/email-views/',
+										defaultLayout: 'success-registration'
+									},
+									viewPath: './views/email-views/'
+								})
+							);
+
+							let mailOption = {
+								from: 'BEE TECHNOLOGIES 🐝  <customersupport@beetech.dev>', // sender address
+								to: email, // list of receivers
+								subject: `Welcome to your new BeeTech Account ✔`, // Subject line
+								template: 'success-registration',
+								context: {
+									username: name,
+									email: email,
+									password: req.body.password
+								}
+							};
+
+							transporter.sendMail(mailOption, (err, data) => {
+								if (err) {
+									console.log('Error occurs');
+									console.log(err);
+								}
+								console.log('Email sent!!!');
+								console.log(data);
+							});
+						}
+					});
+
+					tempCont.query('SELECT * FROM testingDB', function(
+						error,
+						rows,
+						fields
+					) {
+						tempCont.release();
+						if (!!error) {
+							console.log(error);
+						} else {
+							users = JSON.parse(JSON.stringify(rows));
+							console.log(users);
+							console.log('Successful query: Retrieve Entire DB');
+							initializePassport(
+								passport,
+								email => users.find(user => user.email === email),
+								id => users.find(user => user.id === id)
+							);
+						}
+					});
+					req.flash('success_msg', 'Sign up completed. You can now log in');
+					res.redirect('/success-register');
+				}
+			});
+		});
 	} catch {
 		res.redirect('/register');
 	}
@@ -322,8 +333,12 @@ function checkNotAuth(req, res, next) {
 }
 
 //Prompt USER to SUCCESS PAGE
-app.get('/success', (req, res) => {
-	res.render('success.ejs');
+app.get('/success-register', (req, res) => {
+	res.render('success-register.ejs');
+});
+
+app.get('/success-contact', (req, res) => {
+	res.render('success-contact.ejs');
 });
 
 //Prompt USER to CONTACT PAGE
@@ -333,9 +348,67 @@ app.get('/contact', (req, res) => {
 });
 
 app.post('/contact', (req, res) => {
-	//res.render('contact.ejs');
-	console.log(req.body);
-	res.redirect('/success');
+	//EMAIL TO CUSTOMER SERVICE REP
+	function mailToServer(req, res) {
+		var message = JSON.stringify(req.body);
+		let mailOption = {
+			from: 'BEE TECHNOLOGIES 🐝  <customersupport@beetech.dev>', // sender address
+			to: 'customersupport@beetech.dev', // list of receivers
+			subject: `[CONTACT BEETECH] New contact inquiry from ${req.body.email}, Subject: ${req.body.subject}`, // Subject line
+			text: message
+		};
+
+		transporter.sendMail(mailOption, (err, data) => {
+			if (err) {
+				console.log('Error occurs REP');
+				console.log(err);
+			} else {
+				console.log('Email sent!!! REP');
+				console.log(data);
+			}
+		});
+	}
+	mailToServer(req, res);
+	//CONFIRMATION EMAIL TO CUSTOMER/SENDER
+	function mailToCustom(req, res) {
+		transporter.use(
+			'compile',
+			hbs({
+				viewEngine: {
+					extName: '.handlebars',
+					partialsDir: './views/email-views/',
+					layoutsDir: './views/email-views/',
+					defaultLayout: 'contact-message'
+				},
+				viewPath: './views/email-views/'
+			})
+		);
+
+		let mailOption1 = {
+			from: 'BEE TECHNOLOGIES 🐝  <customersupport@beetech.dev>', // sender address
+			to: req.body.email, // list of receivers
+			subject: `Thank you for contacting us ✔`, // Subject line
+			template: 'contact-message',
+			context: {
+				username: `${req.body.firstname} ${req.body.lastname}`,
+				email: req.body.email,
+				message: req.body.message
+			}
+		};
+
+		transporter.sendMail(mailOption1, (err, data) => {
+			if (err) {
+				console.log('Error occurs CUS');
+				console.log(err);
+			}
+			console.log('Email sent!!! CUS');
+			console.log(data);
+		});
+		req.flash('success_msg', 'Message sent successfully. Going to Homepage...');
+		res.redirect('/success-contact');
+	}
+	mailToCustom(req, res);
+	//REDIRECT
 });
 //------END AUTHENTICATION--------------------------------------------------------//
 

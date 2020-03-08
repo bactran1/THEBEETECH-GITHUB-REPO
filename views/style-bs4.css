@@ -11,7 +11,7 @@ html {
 	margin: 0;
 }
 body {
-	background-color: #60615c;
+	background-color: #111b1c;
 	width: 100%;
 	overflow-x: hidden;
 }
@@ -153,6 +153,7 @@ nav .nav-link {
 	right: 0;
 	background-color: black;
 	opacity: 0.45;
+	height: 100%;
 }
 .carousel-caption a {
 	text-align: center;
@@ -362,7 +363,7 @@ h3 {
 	border-radius: 1rem;
 }
 .appr2 label {
-	color: var(--bee-black);
+	color: var(--bee-yellow);
 }
 /******** MEET THE TEAM **********************************************************/
 .meettheteam .meet {
@@ -383,7 +384,7 @@ h3 {
 }
 .team .card {
 	padding: 25px;
-	background-color: var(--bee-drkblack);
+	background-color: transparent;
 	border: none;
 }
 .team .card-title {
@@ -428,14 +429,14 @@ h3 {
 }
 /******** FOOTER **********************************************************/
 footer {
-	background-color: #adada3;
+	background-color: transparent;
 	border-radius: 7px;
 }
 .rowfooter {
 	margin: 0px 0px !important;
 }
 .rowfooter p {
-	color: var(--bee-black);
+	color: var(--bee-white);
 	font-size: 18px;
 	font-family: Quicksand;
 }
@@ -444,7 +445,7 @@ footer {
 }
 .rowfooter a i {
 	font-size: 50px;
-	color: var(--bee-black);
+	color: var(--bee-white);
 	padding: 10px;
 	-webkit-transition: font-size 0.3s;
 	transition: font-size 0.3s;

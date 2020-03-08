@@ -96,6 +96,19 @@
                     <div class="row text-start mb-5">
                         <form method="POST" class="col container p-3" action="/register">
                             <div class="form-row mx-5 px-auto my-3 d-flex justify-content-center">
+                                <div class="col-md-6 px-3 py-0 my-0 mx-auto alert alert-danger" style="border: none !important; min-height: 0px !important;">
+                                    <% if (messages.error) { %>
+                                        <%= messages.error %>
+                                    <% } %>
+                                    <% if(success_msg != '') { %>
+                                        <%= success_msg %>
+                                    <% } %>
+                                    <% if(error_msg != '') { %>
+                                        <%= error_msg %>
+                                    <% } %>
+                                </div>
+                            </div>
+                            <div class="form-row mx-5 px-auto my-3 d-flex justify-content-center">
                                 <div class="col-md-6 px-0">
                                     <label>First name</label>
                                     <input name="firstname" type="text" class="form-control" id="FirstnameID" placeholder="First Name" required>
@@ -113,6 +126,12 @@
                                 <div class="col-md-6 px-0">
                                     <label>Password (At least one number, one lowercase and uppercase letter)</label>
                                     <input type="password" name="password" id="password" class="form-control" minlength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Your Password" required>
+                                </div>
+                            </div>
+                            <div class="form-row mx-5 px-auto my-3 d-flex justify-content-center subbtn">
+                                <div class="col-md-6 px-0">
+                                    <label>Confirm your password</label>
+                                    <input type="password" name="password2" id="password2" class="form-control" placeholder="Confirm Password" required>
                                 </div>
                             </div>
 
@@ -137,7 +156,7 @@
                             </div>
                             <div class="form-row mx-5 px-auto my-3 d-flex justify-content-center subbtn">
                                 <div class="col-md-6 px-0">
-                                        <a class="btn btn-light form-control" href="./login" type="submit"><i class="fas fa-sign-in-alt"></i> LOGIN</a>
+                                        <a class="btn btn-light form-control" href="./login"><i class="fas fa-sign-in-alt"></i> LOGIN</a>
                                 </div>
                             </div>
                         </form>
