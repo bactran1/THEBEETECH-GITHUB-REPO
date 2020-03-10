@@ -247,7 +247,9 @@ h3 {
 	-moz-transition: 0.25s ease-in-out;
 	-o-transition: 0.25s ease-in-out;
 	transition: 0.25s ease-in-out;
-	background: #f2aa4cff;
+}
+.animated-icon1 span {
+	background: var(--bee-orange);
 }
 .animated-icon1 span:nth-child(1) {
 	top: 0px;
