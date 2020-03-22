@@ -354,7 +354,7 @@ app.post('/contact', (req, res) => {
 		let mailOption = {
 			from: 'BEE TECHNOLOGIES 🐝  <customersupport@beetech.dev>', // sender address
 			to: 'customersupport@beetech.dev', // list of receivers
-			subject: `[CONTACT BEETECH] New contact inquiry from ${req.body.email}, Subject: ${req.body.subject}`, // Subject line
+			subject: `[CONTACT INQUIRY BEETECH] New contact inquiry from ${req.body.email}, Subject: ${req.body.subject}`, // Subject line
 			text: message
 		};
 

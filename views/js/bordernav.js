@@ -2,6 +2,6 @@ $(document).ready(function(){
     $('.noactive').hover(function() {
         $('.active').css('border-color','transparent');
         }, function() {
-            $('.active').css('border-color','black');
+            $('.active').css('border-color','#333333');
     });
 });

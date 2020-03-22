@@ -90,8 +90,8 @@ nav .nav-link {
 	color: var(--bee-white) !important;
 }
 .active {
-	border-bottom: #333333 solid 2px;
-	border-top: #333333 solid 2px;
+	border-bottom: #555555 solid 2px;
+	border-top: #555555 solid 2px;
 	transition: ease-in-out 0.5s;
 }
 .noactive {
@@ -100,8 +100,8 @@ nav .nav-link {
 	transition: ease-in-out 0.5s;
 }
 .noactive:hover {
-	border-bottom: #333333 solid 2px;
-	border-top: #333333 solid 2px;
+	border-bottom: #555555 solid 2px;
+	border-top: #555555 solid 2px;
 }
 
 .main-nav a {
