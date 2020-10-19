@@ -33,7 +33,7 @@ transporter.use(
 
 let mailOption = {
 	from: 'BEE TECHNOLOGIES 🐝  <customersupport@beetech.dev>', // sender address
-	to: 'phongkiembac@gmail.com', // list of receivers
+	to: 'phongkiembac2202@gmail.com', // list of receivers
 	subject: `It's Bee Tech ✔`, // Subject line
 	template: 'success-registration',
 	context: {
@@ -45,7 +45,7 @@ transporter.sendMail(mailOption, (err, data) => {
 	if (err) {
 		console.log('Error occurs');
 		console.log(err);
-	}
+	}else{
 	console.log('Email sent!!!');
-	console.log(data);
+	console.log(data);}
 });
