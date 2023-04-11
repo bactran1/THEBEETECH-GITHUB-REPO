@@ -89,28 +89,59 @@
                     <div class="col-12 mt-auto mb-auto py-2 pb-3" style="border:0;"><i class="fas fa-chalkboard-teacher fa-2x faa-float animated-hover"></i> USER DASHBOARD</div>
                 </div>
             </div>
-            <div class="container-fluid">
-                <div class="row text-center apprtitle p-3">
-                    <iframe src="http://192.168.1.217:3000/d-solo/Ikd4JvLVk/bac-home-solar-system?orgId=1&from=1681080936000&to=1681083673000&panelId=2" width="450" height="200" frameborder="0">
-                        
-                    </iframe>
-                </div>
-            </div>
             
-
-            <div class="container" id="form1">
+            <div class="pl-4" id="form1">
                 <div class="row text-start mb-5">
-                    <form class="col container p-3" action="/logout?_method=DELETE" method="POST">
+                    <form class="col container" action="/logout?_method=DELETE" method="POST">
                         <h1 class="col" style="font-family: Quicksand; color:var(--bee-orange)">Hi, <%= name %>. Welcome to your Dashboard.</h1>
-                        <div class="form-row subbtn my-3">
+                        <div class="form-row subbtn">
                             <div class="container-fluid" style="padding:0;">
-                                <div class="col-md-3" style="padding: 0 10px;">
+                                <div class="col-md-3" style="padding: 0 20px;">
                                     <button class="btn btn-light form-control" type="submit"><i class="fas fa-sign-out-alt"></i> LOGOUT</button>
                                 </div>
                             </div>
                         </div>
                     </form>
                 </div>
+            </div>
+
+            <div class="container-fluid p-3">
+                <div class="row text-center p-4">
+                    <h1 class="col-lg-12 p-2" style="font-family: Quicksand; color:black; background-color: var(--bee-orange);">Battery</h1>
+                </div>
+                <div class="row text-center p-3">
+
+                        <iframe class="col-md-4" src="http://192.168.1.217:3000/d-solo/Ikd4JvLVk/bac-home-solar-system?orgId=1&from=1681140101000&to=1681210096000&refresh=5s&theme=light&panelId=2" width="450" height="200" frameborder="0"></iframe>
+
+
+                        <iframe class="col-md-4" src="http://192.168.1.217:3000/d-solo/Ikd4JvLVk/bac-home-solar-system?orgId=1&from=1681140101000&to=1681210096000&refresh=5s&theme=light&panelId=11" width="450" height="200" frameborder="0"></iframe>
+
+                        <iframe class="col-md-4" src="http://192.168.1.217:3000/d-solo/Ikd4JvLVk/bac-home-solar-system?orgId=1&from=1681140101000&to=1681210096000&refresh=5s&theme=light&panelId=13" width="450" height="200" frameborder="0"></iframe>
+
+                </div>
+                <div class="row text-center p-4">
+                    <h1 class="col-lg-12 p-2" style="font-family: Quicksand; color:black; background-color: var(--bee-orange);">Solar</h1>
+                </div>
+                <div class="row text-center p-3">
+
+                    <iframe class="col-md-4" src="http://192.168.1.217:3000/d-solo/Ikd4JvLVk/bac-home-solar-system?orgId=1&from=1681140101000&to=1681210096000&refresh=5s&panelId=25" width="450" height="200" frameborder="0"></iframe>
+
+
+                    <iframe class="col-md-4" src="http://192.168.1.217:3000/d-solo/Ikd4JvLVk/bac-home-solar-system?orgId=1&from=1681140101000&to=1681210096000&refresh=5s&panelId=27" width="450" height="200" frameborder="0"></iframe>
+
+                    <iframe class="col-md-4" src="http://192.168.1.217:3000/d-solo/Ikd4JvLVk/bac-home-solar-system?orgId=1&from=1681140101000&to=1681210096000&refresh=5s&panelId=17" width="450" height="200" frameborder="0"></iframe>
+
+                </div>
+                <div class="row text-center p-4">
+                    <h1 class="col-lg-12 p-2" style="font-family: Quicksand; color:black; background-color: var(--bee-orange);">Grid</h1>
+                </div>
+                <div class="row text-center p-3">
+
+                    <iframe class="col-lg-12" src="http://192.168.1.217:3000/d-solo/Ikd4JvLVk/bac-home-solar-system?orgId=1&from=1681140101000&to=1681210096000&refresh=5s&panelId=21" width="450" height="200" frameborder="0"></iframe>
+
+                </div>
+
+                
             </div>
 
 
