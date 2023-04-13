@@ -61,8 +61,17 @@ hr {
     }
   */
 
-/* Style for side navigation bar */
+/* Style for no gutters*/
 
+.no-gutters {
+	margin-right: 100px;
+	margin-left: 100px;
+	> .col,
+	> [class*="col-"] {
+	  padding-right: 100px;
+	  padding-left: 100px;
+	}
+  }
 
 
 
