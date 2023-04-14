@@ -60,6 +60,21 @@ hr {
       scroll-snap-align: end;
     }
   */
+
+/* Style for no gutters*/
+
+.no-gutters {
+	margin-right: 100px;
+	margin-left: 100px;
+	> .col,
+	> [class*="col-"] {
+	  padding-right: 100px;
+	  padding-left: 100px;
+	}
+  }
+
+
+
 /******** NAVIGATION BAR **********************************************************/
 .bg-light {
 	/*background-image: linear-gradient(#F69E00,#F69E00,#F69E00,#F69E00,#F69E00,#F69E00,#F69E00,#F69E00, #343434) !important;
