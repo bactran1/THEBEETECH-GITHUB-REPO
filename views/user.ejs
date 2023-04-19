@@ -102,11 +102,19 @@
         <section class="appr2 d-flex flex-column align-self-center">
             <div class="container-fluid">
                 <div class="row text-center apprtitle p-3">
-                    <div class="col mt-auto mb-auto py-2 pb-3 display-5" style="border:0;">
+                    <div class="col mt-auto mb-auto py-2 pb-3 display-4" style="border:0;">
                         Bac's Solar System
                     </div>
                 </div>
             </div>
+
+
+            <!-- Weather -->
+            <div class="container-fluid p-3">
+                <div class="row text-center px-4 pt-5 pb-2">
+                    <a class="weatherwidget-io col-lg-12" href="https://forecast7.com/en/47d41n122d20/98031/" data-label_1="KENT" data-label_2="WEATHER" data-basecolor="rgba(31, 31, 31, 0.93)" data-textcolor="#f3f0f0" data-suncolor="#f2aa4cff" data-mooncolor="#f2aa4cff" data-cloudcolor="#f2aa4cff" data-raincolor="#f2aa4cff" data-snowcolor="#f2aa4cff" >KENT WEATHER</a>
+                </div>
+            <div>
 
 
             <!-- Battery -->
@@ -197,6 +205,12 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+
+    <!-- Weatherwidget.io script -->
+    <script>
+        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+    </script>
 
     <!--For Particles Effect JS-->
     <script src="js/particles.js"></script>
