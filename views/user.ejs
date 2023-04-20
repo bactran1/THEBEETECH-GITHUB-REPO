@@ -102,7 +102,7 @@
         <section class="appr2 d-flex flex-column align-self-center">
             <div class="container-fluid">
                 <div class="row text-center apprtitle p-3">
-                    <div class="col mt-auto mb-auto py-2 pb-3 display-4" style="border:0;">
+                    <div class="col mt-auto mb-auto py-2 pb-3" style="border:0; font-size: xx-large;">
                         Bac's Solar System
                     </div>
                 </div>
@@ -111,8 +111,9 @@
 
             <!-- Weather -->
             <div class="container-fluid p-3">
+
                 <div class="row text-center px-4 pt-5 pb-2">
-                    <a class="weatherwidget-io col-lg-12" href="https://forecast7.com/en/47d41n122d20/98031/" data-label_1="KENT" data-label_2="WEATHER" data-basecolor="rgba(31, 31, 31, 0.93)" data-textcolor="#f3f0f0" data-suncolor="#f2aa4cff" data-mooncolor="#f2aa4cff" data-cloudcolor="#f2aa4cff" data-raincolor="#f2aa4cff" data-snowcolor="#f2aa4cff" >KENT WEATHER</a>
+                    <iframe class="col-lg-12" width="650" height="450" src="https://embed.windy.com/embed2.html?lat=47.387&lon=-122.184&detailLat=47.397&detailLon=-122.173&width=650&height=450&zoom=11&level=surface&overlay=temp&product=ecmwf&menu=&message=&marker=&calendar=now&pressure=&type=map&location=coordinates&detail=true&metricWind=default&metricTemp=default&radarRange=-1" frameborder="0"></iframe>
                 </div>
             <div>
 
@@ -209,8 +210,21 @@
 
     <!-- Weatherwidget.io script -->
     <script>
-        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
-    </script>
+        (function(d, s, id) {
+            if (d.getElementById(id)) {
+                if (window.__TOMORROW__) {
+                    window.__TOMORROW__.renderWidget();
+                }
+                return;
+            }
+            const fjs = d.getElementsByTagName(s)[0];
+            const js = d.createElement(s);
+            js.id = id;
+            js.src = "https://www.tomorrow.io/v1/widget/sdk/sdk.bundle.min.js";
+
+            fjs.parentNode.insertBefore(js, fjs);
+        })(document, 'script', 'tomorrow-sdk');
+        </script>
 
     <!--For Particles Effect JS-->
     <script src="js/particles.js"></script>
