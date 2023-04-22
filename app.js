@@ -156,6 +156,10 @@ app.get('/user', checkAuth, (req, res) => {
 	res.render('user.ejs', { name: req.user.name });
 });
 
+app.get('solar', (req, res) => {
+	res.render('solar.ejs');
+});
+
 //Prompt USER to LOGIN
 app.post(
 	'/login',
