@@ -11,6 +11,7 @@
         <meta charset="utf-8">
         <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta http-equiv="Refresh" content="3600"> <!-- refresh every 1 hr -->
 
         <!--ADD TITLE ICON-->
         <!--FAVICON-->
@@ -39,7 +40,7 @@
         <script src="js/toggler.js"></script>
         <script src="js/carousel.js"></script>
         <link rel="stylesheet" href="style-bs4.css">
-        <title> Bee Technologies - Dashboard </title>
+        <title> Bee Technologies - Solar </title>
     </head>
 
     <body>
@@ -75,22 +76,6 @@
                     <ul class="navbar-nav nav-right">
                         <li class="nav-item noactive">
                             <a class="nav-link" href="./contact">CONTACT</a>
-                        </li>  
-                        <li class="nav-item noactive">
-                            <h4 class="col pt-2" style="font-family: Quicksand; color:var(--bee-orange)">Hi, <%= name %></h4>
-                        </li>
-                        <li class="nav-item noactive">
-                            <div class="row text-start">
-                                <form class="col container" action="/logout?_method=DELETE" method="POST">
-                                    <div class="form-row subbtn pt-1">
-
-                                            <div class="col">
-                                                <button class="btn btn-light form-control" type="submit"><i class="fas fa-sign-out-alt"></i>   LOGOUT</button>
-                                            </div>
-
-                                    </div>
-                                </form>
-                            </div>
                         </li>   
                     </ul>
                 </div>
@@ -151,10 +136,10 @@
                 <div class="row text-center px-3 py-0">
 
                     <iframe class="col-sm-2" src="http://grafana.bt-ai.dev/d-solo/Ikd4JvLVk/bac-home-solar-system?orgId=1&refresh=5s&panelId=15" width="200" height="300" frameborder="0" style="padding: 2px;"></iframe>
-
+                    <!--
                     <iframe class ="col-sm-2" src="http://grafana.bt-ai.dev/d-solo/Ikd4JvLVk/bac-home-solar-system?orgId=1&refresh=5s&panelId=17" width="200" height="300" frameborder="0" style="padding: 2px;"></iframe>
-
-                    <iframe class ="col-sm-8" src="http://grafana.bt-ai.dev/d-solo/Ikd4JvLVk/bac-home-solar-system?orgId=1&refresh=5s&panelId=41" width="200" height="300" frameborder="0" style="padding: 2px;"></iframe>
+                    -->
+                    <iframe class ="col-sm-10" src="http://grafana.bt-ai.dev/d-solo/Ikd4JvLVk/bac-home-solar-system?orgId=1&refresh=5s&panelId=41" width="200" height="300" frameborder="0" style="padding: 2px;"></iframe>
 
                 </div>
 
@@ -230,11 +215,11 @@
         </script>
 
     <!--For Particles Effect JS-->
-    <script src="js/particles.js"></script>
+    <!-- <script src="js/particles.js"></script> -->
     <script src="js/appptc.js"></script>
     <!---------------------------------------------------------------->
     
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="js/bootstrap-swipe-carousel.min.js"></script>
     <script src="js/scrolltop.js"></script>
