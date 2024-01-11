@@ -78,7 +78,7 @@ var connection = connection3;
 
 connection.getConnection(function(error, tempCont) {
 	if (!!error) {
-		tempCont.release();
+		//tempCont.release(); #Temporary fix
 		console.log('Error');
 		return;
 	} else {
